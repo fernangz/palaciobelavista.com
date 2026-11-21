@@ -1,11 +1,13 @@
-# Palacio Belavista
+# Palacio Bela Vista
 
-Static website for **Palacio Belavista**, a Pombaline palace at **Rua do Ataíde 9, 1200-034 Lisboa**, parish of Misericórdia.
+Static website for **Palacio Bela Vista**, a Pombaline palace at **Rua do Ataíde 9, 1200-034 Lisboa**, parish of Misericórdia.
 
 - **Live for now:** https://fernangz.github.io/palaciobelavista.com/
 - **Repository:** https://github.com/fernangz/palaciobelavista.com
 - **Final domain (pending):** https://palaciobelavista.com
 - **Enquiries:** enquiries@palaciobelavista.com
+
+> The public name is **Palacio Bela Vista** (two words). The domain, repository and email address keep the compact `palaciobelavista.com` form; the video and VTT filenames also keep the hyphenated form.
 
 > **Hosting note.** The site is published on GitHub Pages at the repository URL while the final domain is arranged. GitHub Pages deploys after a push to `main`; the build and CDN usually update within 1–10 minutes, occasionally longer. A hard refresh or a fresh `curl -I` is the quickest way to confirm the new `last-modified` header. Canonical, hreflang, Open Graph and JSON-LD URLs currently use the GitHub Pages address, not the future domain.
 >
@@ -17,7 +19,7 @@ A private Pombaline residence in Lisbon, presented through architecture, interio
 
 | Field | Value |
 | --- | --- |
-| Name | Palacio Belavista |
+| Name | Palacio Bela Vista |
 | Street | Rua do Ataíde 9 |
 | Postal code | 1200-034 |
 | City / parish | Lisboa / Misericórdia |
@@ -152,7 +154,7 @@ FONT-LICENSES.md
 
 ### Hero and narrative
 
-- Full-viewport atrium image, dark shade, two-line H1: “Palacio” roman / “Belavista” italic.
+- Full-viewport atrium image, dark shade, two-line H1: “Palacio” roman / “Bela Vista” italic.
 - Address in a small translucent label; short lede; two actions; bottom rail with coordinates, building rhythm and scroll cue.
 - Image focal point 38% vertical keeps the lantern visible under the headline. No autoplay video or carousel.
 - Page order: Hero → Palace → Architecture → Interiors → Craft → Garden & river → Film → Gallery → Private viewings → Find us → FAQ → Request dossier → Footer.
@@ -179,7 +181,7 @@ FONT-LICENSES.md
 - Form: two-column editorial layout on desktop, stacked mobile; underlined fields; uppercase gold labels; name/email, phone/interest, message, consent, dark rectangular submit.
 - Short form by design: the dossier is the offer. Native validation, labels, consent, honeypot; mailto fallback or optional static endpoint; `aria-live` status with direct email fallback.
 - The email subject uses the page’s localized hidden `_subject` value, so the mail subject follows the page language.
-- Footer: dark ink, oversized Prata wordmark, italic gold “Belavista”; Visit/Discover/Contact columns.
+- Footer: dark ink, oversized Prata wordmark, italic gold “Bela Vista”; Visit/Discover/Contact columns.
 - Language switcher in footer and menu, not header: visible two-letter codes, native-language accessible names, active gold rule. It now lists eleven languages in speaker order.
 - Back-to-top is a plain text arrow link, not a floating button.
 
@@ -275,7 +277,7 @@ Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSit
 Every page carries a visible-to-machines timestamp in the head:
 
 ```html
-<meta name="lastmod" content="2026-11-21T11:56:00+01:00">
+<meta name="lastmod" content="2026-11-21T12:01:00+01:00">
 ```
 
 - It records the **publish time of the current push**, in ISO 8601 with the `Europe/Lisbon` offset.
@@ -372,7 +374,7 @@ Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Opti
 13. Added French, Portuguese, Spanish, German and Italian with localized metadata/JSON-LD/switchers.
 14. Responsive fixes: tablet footer, German hyphenation, no overflow, localized counts/hints.
 15. Performance: inline fonts, optimized images, deferred JS, static map, no third-party; Lighthouse 100s.
-16. Renamed Boavista → Belavista → **Palacio Belavista**, including domain/email/video/social card/schema/translations.
+16. Renamed Boavista → Belavista → **Palacio Bela Vista**, including social card/schema/translations. The domain, repository and email retain the compact `palaciobelavista.com` form because DNS names and local-parts cannot contain spaces.
 17. Produced a single-file French export with images/film/captions/fonts/map/icons embedded (kept outside this publishing repo).
 18. Full-page desktop/mobile screenshots stitched to avoid Chrome’s 16k duplication.
 19. Moved only the final site contents into this repo; committed and pushed.
@@ -385,4 +387,4 @@ Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Opti
 
 ## 13. Credits
 
-Photography/film from the palace archive. **Prata** (Cyreal), **Jost** (Indestructible Type) and the **Noto** script families under SIL OFL; see `FONT-LICENSES.md`. Map data © OpenStreetMap contributors, ODbL. No third-party analytics/advertising/cookies/tracking. Website copy, photography and film remain property of Palacio Belavista; code not licensed for reuse without permission.
+Photography/film from the palace archive. **Prata** (Cyreal), **Jost** (Indestructible Type) and the **Noto** script families under SIL OFL; see `FONT-LICENSES.md`. Map data © OpenStreetMap contributors, ODbL. No third-party analytics/advertising/cookies/tracking. Website copy, photography and film remain property of Palacio Bela Vista; code not licensed for reuse without permission.
