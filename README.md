@@ -168,7 +168,7 @@ The page is ordered for a real-estate reader rather than an editorial one:
 - **Video** opens with a postcard cover panel: framed portrait film poster beside a cream text panel with the window mark, two-line wordmark, location, promise, sale line and a click-to-load play control.
 - **Gallery** follows immediately: 25 photographs, filters and lightbox.
 - **Property identity** gives the address, coordinates, property type and the static area map.
-- **Characteristics** is an eight-field grid: square footage, lot size, bedrooms, bathrooms, build year, construction materials, structural features and sustainability status. Numeric areas and room counts are marked “On request” until the owner supplies figures; full details are offered in the dossier.
+- **Characteristics** is a ten-field grid: reported area, reported plot area, rooms, bedrooms, bathrooms, build year, construction materials, structural features, outdoor spaces and sustainability status. The reported figures are 1,036.68 m², 488.49 m², 25 rooms, 12 bedrooms and 1783, with a garden and two terraces. Bathroom schedule and floor count remain to be confirmed; the grid carries that caveat.
 - **Craft** keeps the architectural and craft detail, including stucco, azulejo, marble and the garden façade.
 - **FAQs** sits before the contact block.
 - **Contact** has no form: it opens with the italic **Discover the residence**, sets **Private film & viewing enquiries** beneath it, then gives the email address and an outlined **Request the full dossier** button whose `mailto:` subject and body are prefilled in the page language.
@@ -187,7 +187,7 @@ The page is ordered for a real-estate reader rather than an editorial one:
 ### Video, property identity and map
 
 - Video is the first content section: a framed portrait poster with a circular play control, never autoplaying; it opens a native-control dialog with captions. Runtime 42 seconds.
-- Property identity combines the address, coordinates, property type and a **static OSM image**, not an iframe: no cookies, no third-party JS, desaturated basemap, brass HTML pin and visible OSM attribution. Google Maps removed.
+- Property identity combines the address, coordinates, property type, asking price (upon request) and a **static OSM image**, not an iframe: no cookies, no third-party JS, desaturated basemap, brass HTML pin and visible OSM attribution. Google Maps removed.
 - The architecture plan drawing is no longer a separate section; the essential structural facts are carried in Characteristics and Craft.
 
 ### Contact, footer and languages
@@ -247,7 +247,7 @@ The site targets **WCAG 2.2 AA** and was audited with Lighthouse plus manual che
 - `prefers-reduced-motion` disables animation, transitions and smooth scroll.
 - Semantic landmarks/headings; one H1 per page (the property name in the video section); correct `<html lang>`; localized alt text; descriptive map alt and OSM attribution.
 - Arabic pages set `dir="rtl"` and keep logical reading order; CJK/Hindi pages declare the correct language subtag.
-- Known limits: published VTT captions are English in every locale (the standalone French export has French VTT); numeric areas and room counts are marked “On request” pending owner data; noindex is not privacy; the new translations should receive a native-speaker review before launch.
+- Known limits: published VTT captions are English in every locale (the standalone French export has French VTT); the reported areas, rooms and 1783 date still require documentary verification, and the bathroom schedule and floor count are unconfirmed; noindex is not privacy; the new translations should receive a native-speaker review before launch.
 
 ## 5. Internationalisation
 
@@ -401,6 +401,7 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 28. Removed unused wide hero image variants and `favicon-48.png`, and rechecked every remaining asset against the published references.
 29. Implemented the postcard design system: window mark, cream split panels, serif body copy, brass rules, two-line wordmark, “Private residence available to purchase”, and a dark gallery/footer contrast.
 30. Added the `/?play` postcard QR deep link and regenerated the OG card and favicons in the postcard system.
+31. Updated the property facts from dossier v04: 1,036.68 m² reported area, 488.49 m² plot, 25 rooms, 12 bedrooms, 1783, garden and two terraces, price upon request; documented the unconfirmed bathroom schedule and floor count.
 
 ## 13. Credits
 

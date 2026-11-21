@@ -2,7 +2,7 @@
 
 Reference: the supplied postcard artwork in `postcard/` (front and back). The artwork is a design reference, not a page asset.
 
-**Status: implemented across all eleven locales.** The window mark, cream postcard panels, serif body copy, brass rules, two-line wordmark, sale wording and dark gallery/footer contrast are live. `/?play` is implemented. The postcard’s “Palacete” will be corrected by the designer to “Palacio”.
+**Status: implemented across all eleven locales.** The window mark, cream postcard panels, serif body copy, brass rules, two-line wordmark, sale wording and dark gallery/footer contrast are live. `/?play` is implemented. Property facts were updated from dossier v04: 1,036.68 m² reported area, 488.49 m² plot, 25 rooms, 12 bedrooms, 1783, garden and two terraces, price upon request; the bathroom schedule and floor count remain unconfirmed. The postcard’s “Palacete” will be corrected by the designer to “Palacio”.
 
 The current typefaces stay: **Noto Serif** and **Noto Sans**. The postcard’s serif is more high-contrast than Noto Serif, so the match is achieved through case, size, tracking, rules and layout rather than a new typeface.
 
@@ -267,4 +267,4 @@ The final QR code must be generated only after the domain is live, so it encodes
 - Do not introduce a new typeface; use Noto Serif/Noto Sans.
 - Do not add a downloadable postcard; the postcard is a physical sales piece. Do not copy “to be confirmed” text.
 - Do not use the postcard’s exact paper texture as a website background; use the colour and matte logic.
-- Do not replace the existing fact set with invented figures; the “On request” values remain until real data is supplied.
+- Do not replace the existing fact set with invented figures; the reported dossier figures are used, with the unconfirmed bathroom schedule and floor count explicitly flagged.

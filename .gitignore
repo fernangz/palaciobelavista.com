@@ -1,2 +1,6 @@
 .DS_Store
 *.log
+
+# Source artwork and dossiers stay outside the published site
+postcard/
+dossier/

@@ -1,7 +1,7 @@
 {
   "name": "Palacio Bela Vista",
   "short_name": "Palacio",
-  "description": "A rare Pombaline palace on Rua do Ataíde, Lisbon: three storeys of grand salons, original azulejos, a walled garden and views over the Tagus. Private residence available to purchase.",
+  "description": "A rare Pombaline palace on Rua do Ataíde, Lisbon: grand salons, original azulejos, a walled garden and views over the Tagus. Private residence available to purchase.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
