@@ -85,12 +85,13 @@ FONT-LICENSES.md
 - Italic display words carry emotion: “light”, “many lights”, “instrument”.
 - Menu/gallery numerals use tracked Noto Sans as editorial folios, not UI counters.
 - **Script coverage:** Noto Serif and Noto Sans carry Latin and Cyrillic, so Russian uses the same serif/sans pairing as the Latin pages, with Cyrillic glyphs included in the embedded subsets.
+- All pages use the same two CSS families, `Noto Serif` and `Noto Sans`. Script-specific faces are registered under those same family names with `unicode-range`, so there are no per-language font stacks or duplicated font-family rules.
 - Japanese, Simplified Chinese, Arabic and Hindi use embedded Noto faces, subset to the characters actually used on that page:
   - Japanese: Noto Serif JP 400 for display; variable Noto Sans JP for body and labels.
   - Chinese: Noto Serif SC 400 for display; variable Noto Sans SC for body and labels.
   - Arabic: Noto Naskh Arabic 400 for display; variable Noto Sans Arabic for body and labels.
   - Hindi: Noto Serif Devanagari 400 for display; variable Noto Sans Devanagari for body and labels.
-- Every page also embeds five tiny label subsets for the native language names in the contact list — `中文`, `हिन्दी`, `العربية`, `Русский`, `日本語` — plus arrow and prime symbol subsets. The language list therefore renders consistently on every locale.
+- Every page also embeds tiny native-name subsets for `中文`, `हिन्दी`, `العربية`, `Русский`, `日本語` plus arrow and prime subsets, all registered as additional `Noto Sans` faces with exact `unicode-range` values. The language list therefore renders consistently without a separate CSS class.
 - Local system fonts remain as a final fallback, but they are no longer the primary source for any script.
 - No external font request is introduced: all faces are inline WOFF2 data URIs. The trade-off is page weight — Japanese, Chinese and Hindi pages are roughly 0.5–0.6 MB of HTML (Chinese just over 0.6 MB) because the embedded subsets are larger.
 - Font licences and copyright notices are in `FONT-LICENSES.md`.
@@ -277,7 +278,7 @@ Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSit
 Every page carries a visible-to-machines timestamp in the head:
 
 ```html
-<meta name="lastmod" content="2026-11-21T12:09:00+01:00">
+<meta name="lastmod" content="2026-11-21T12:13:00+01:00">
 ```
 
 - It records the **publish time of the current push**, in ISO 8601 with the `Europe/Lisbon` offset.
