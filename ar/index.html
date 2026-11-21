@@ -22,7 +22,7 @@
 <link rel="alternate" hreflang="ja" href="https://fernangz.github.io/palaciobelavista.com/ja/">
 <link rel="alternate" hreflang="it" href="https://fernangz.github.io/palaciobelavista.com/it/">
 <link rel="alternate" hreflang="x-default" href="https://fernangz.github.io/palaciobelavista.com/">
-<meta name="lastmod" content="2026-11-21T14:01:00+01:00">
+<meta name="lastmod" content="2026-11-21T14:10:00+01:00">
 <meta name="theme-color" content="#1b1a17">
 <meta name="format-detection" content="telephone=no">
 <meta name="geo.region" content="PT-11">
@@ -215,6 +215,9 @@ input,textarea,select,[contenteditable="true"]{
 a[href],button,summary,[role="button"]{cursor:pointer}
 button:disabled,[aria-disabled="true"]{cursor:not-allowed}
 select{cursor:pointer}
+
+/* gallery hover surface: apply zoom-in to the button and every child */
+.gallery__button,.gallery__button *{cursor:-webkit-zoom-in;cursor:zoom-in}
 </style>
 <noscript><style>.reveal,.reveal-img,.gallery__item{opacity:1!important;transform:none!important;clip-path:none!important}.site-header{background:rgba(252,243,228,.96);color:#1b1a17;border-bottom:1px solid rgba(27,26,23,.15)}.site-header::before{opacity:0}.menu-toggle{display:none}</style></noscript>
 <style>
