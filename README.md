@@ -64,7 +64,7 @@ POSTCARD-DESIGN-CHANGES.md
 
 ### Postcard design reference
 
-The supplied postcard artwork is the reference for the next visual pass. The gap analysis, section-by-section changes and open decisions are documented in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). The current typefaces remain Noto Serif and Noto Sans.
+The supplied postcard artwork is the reference for the next visual pass. The gap analysis and section-by-section changes are documented in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). Resolved: the name stays **Palacio Bela Vista**; the window mark becomes the primary logo; the gallery stays dark; the sale wording is **“Private residence available to purchase”**; the postcard QR points to `/?play`; there is no downloadable postcard. The current typefaces remain Noto Serif and Noto Sans.
 
 ### Direction
 

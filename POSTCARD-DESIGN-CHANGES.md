@@ -32,33 +32,31 @@ The current typefaces stay: **Noto Serif** and **Noto Sans**. The postcard’s s
 - “PALACIO BELA VISTA” — the website name is fixed. The postcard’s current “Palacete” wording will be revised by the designer to “Palacio”.
 - “LISBON · PORTUGAL”
 - “History. Beauty. A home like no other.”
-- “A historic palace offered for sale.”
+- “Private residence available to purchase.”
 - “YOUR NEXT CHAPTER, IN LISBON.”
 - “Grand reception rooms. Ornate ceilings. Gardens, terraces and views of the Tagus.”
 - “Discover the residence”
 - “Private film & viewing enquiries”
-- A QR placeholder — destination not yet defined.
+- A QR code pointing to `https://palaciobelavista.com/?play`, with the URL printed alongside it.
 
 ## 2. Decisions
 
 ### Resolved
 
 - **Name:** **Palacio Bela Vista**. The website name is fixed; the postcard’s “Palacete” will be updated by the designer to “Palacio”. All website wordmarks, metadata and translations stay on “Palacio”.
-
-### Still needed
-
-1. **Sale positioning:** the postcard says “A historic palace offered for sale.” The site currently says “private residence” and does not mention sale. Confirm the public wording: “offered for sale”, “private sale”, or “available on request”.
-2. **Logo:** replace the PB monogram with the window/bridge/balustrade line mark, or keep PB and use the window mark only as a cover illustration?
-3. **Gallery/footer contrast:** go fully cream like the postcard, or keep the dark gallery/footer as a deliberate counterpoint? The closest match is cream gallery and cream footer.
-4. **QR:** where should it point — the film, the dossier mailto, or the website itself? The postcard’s QR is currently a placeholder.
-5. **Postcard download:** should the website offer a printable/downloadable postcard, or is the artwork only a design reference?
+- **Sale positioning:** **“Private residence available to purchase.”** Use this exact public wording in the sale statement, metadata and translations. The postcard copy will be updated to match.
+- **Logo:** use the postcard’s **window mark** as the primary brand mark. Replace the PB monogram in the header, footer, favicon and OG card.
+- **Gallery:** retain the **dark ink background**. The gallery remains the deliberate dark contrast to the cream postcard panels; only its typography, rules and captions should be refined.
+- **Footer:** keep the current dark footer as the closing contrast block unless a later design review decides otherwise.
+- **QR:** point to **`https://palaciobelavista.com/?play`**. Opening the URL should open the film and start playback. The printed postcard must also show the URL as a fallback.
+- **Postcard distribution:** the postcard is a physical print piece sent to potential buyers. It links to the website through the QR code and printed URL. **No downloadable postcard is needed on the website.**
 
 ## 3. P0 — Brand and global tokens
 
 ### 3.1 Add the window mark
 
 - Trace or redraw the postcard’s open-window illustration as a clean SVG: open shutters, bridge, river, city roofs, balustrade.
-- Use it:
+- Replace the PB monogram with the window mark. Use it:
   - above the wordmark on the opening panel;
   - in the footer;
   - as the favicon/PWA icon at small sizes;
@@ -133,20 +131,20 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
   - cream text panel on the other;
   - window mark, two-line wordmark, `LISBON · PORTUGAL`, rule;
   - italic promise: “History. Beauty. A home like no other.”;
-  - short line: “A historic palace offered for sale.” (pending decision);
+  - short line: “Private residence available to purchase.”;
   - a quiet “Play the film” text link/outlined control over the poster.
 - Keep the 42-second click-to-load film and native dialog.
 
 ### 4.3 Gallery
 
 - Current: dark ink background, masonry, captions over images.
-- Change:
-  - cream/mount background;
-  - photographs inside cream mats with thin rules;
-  - captions below the image in ink, not over a dark gradient;
-  - filters as tracked text with a thin active rule;
+- **Retain the dark ink background** as the deliberate counterpoint to the cream postcard panels.
+- Refine instead of lightening:
+  - warm brass rules and tracked Noto Sans captions;
+  - a slightly warmer dark ink and softer caption gradient;
+  - filters as tracked text with a thin brass active rule;
   - keep 25 images, filters, lightbox and responsive carousel.
-- The gallery should feel like a set of postcard plates, not a dark exhibition wall.
+- Do not convert the gallery to a cream/mount background.
 
 ### 4.4 Property identity
 
@@ -199,62 +197,73 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
   - small line “Private film & viewing enquiries”;
   - email address in Noto Serif;
   - outlined `REQUEST THE FULL DOSSIER` link;
-  - optional QR block only if a destination is agreed.
+  - no QR block on the website; the QR belongs to the printed postcard.
 - Keep the localized prefilled mailto and remove any dark filled CTA.
 
 ### 4.9 Footer
 
-- Current: dark ink footer.
-- Change:
-  - cream footer with black wordmark and thin rules (closest postcard match), or
-  - keep dark ink as the only strong contrast block if the client prefers a clear ending.
+- Keep the current dark ink footer as the default closing contrast.
+- The resolved gallery decision does not automatically make the footer cream; revisit only in a later visual review.
+- Replace the PB monogram with the window mark and set the wordmark on two lines.
 - Keep the language selector, contact details and back-to-top.
-- If cream, use the window mark and a two-line wordmark rather than the current oversized single-line treatment.
 
 ## 5. P1 — Content changes
 
 - Add the postcard promise: **“History. Beauty. A home like no other.”**
-- Add the sale statement: **“A historic palace offered for sale.”** — only after the sale-positioning decision.
+- Add the sale statement: **“Private residence available to purchase.”**
 - Add the back-cover headline: **“Your next chapter, in Lisbon.”**
 - Add the three-line feature list: **“Grand reception rooms. Ornate ceilings. Gardens, terraces and views of the Tagus.”**
 - Add the contact lead: **“Discover the residence”** and **“Private film & viewing enquiries.”**
-- Do not copy `Contact details and video link to be confirmed` or the `QR PLACEHOLDER`; those are production placeholders.
+- Do not copy `Contact details and video link to be confirmed`; it is a production placeholder. The QR destination is now `https://palaciobelavista.com/?play`.
 - Translate every new line into all 11 locales and keep the mailto copy localized.
 
-## 6. P2 — Assets and finishing
+## 6. P1 — `/?play` video deep link
+
+The postcard QR points to `https://palaciobelavista.com/?play`. The website needs a dedicated deep-link behaviour:
+
+- On load, if `play` is present in the query string, open the existing film dialog.
+- Attempt to start the film automatically.
+- Browsers block audible autoplay without a gesture; if `play()` is rejected, leave the native player visible with the play control focused. Do not silently fail.
+- Do not autoplay on a normal visit. `/?play` is the only trigger.
+- Keep the same behaviour on the provisional GitHub Pages URL for testing: `https://fernangz.github.io/palaciobelavista.com/?play`.
+- The final QR code must be generated only after the domain is live, so it encodes the final URL.
+- The postcard must print `palaciobelavista.com/?play` next to the QR.
+- If the visitor changes language after landing, the film dialog and controls should stay in the selected locale.
+
+## 7. P2 — Assets and finishing
 
 - Regenerate the OG card in the postcard system: cream ground, window mark, two-line wordmark, no dark overlay.
-- Replace the PB monogram favicons with the window mark if the logo decision is approved.
+- Replace the PB monogram favicons with the window mark.
 - Crop the facade photograph for the front/cover and a ceiling or reception-room photograph for the back/contact.
 - Keep natural colour grading; no heavy filters.
-- Consider a “Download the postcard” PDF only if the client wants a printable leave-behind.
+- Do not add a downloadable postcard; the postcard is a physical sales piece.
 - Update `README.md`, `FONT-LICENSES.md` references and this document after the design pass.
 
-## 7. Responsive and accessibility constraints
+## 8. Responsive and accessibility constraints
 
 - Split panels stack on mobile: image first, cream text panel below.
 - Keep the 16px minimum for every label and caption.
 - Maintain 44px targets for nav, buttons, filters, language links and the dossier CTA.
 - Check contrast for muted brass/taupe on cream; use the darker `--muted` for small text.
 - The window mark needs a text alternative where it carries meaning; decorative copies are hidden.
-- The QR block, if used, needs a visible text link as an equivalent.
+- The printed postcard must show the URL next to the QR code so the link still works if scanning fails.
 - Test 320, 390, 768, 1024 and 1440px; repeat in RTL Arabic and CJK locales.
 - Preserve `prefers-reduced-motion`; the postcard is static, so no new motion is needed.
 
-## 8. Suggested implementation order
+## 9. Suggested implementation order
 
-1. **Brand decision + window mark + palette tokens** (0.5–1 day).
+1. **Window-mark tracing + palette tokens** (0.5–1 day).
 2. **Header, wordmark and opening video panel** (1 day).
 3. **Gallery, property identity and characteristics** (1–1.5 days).
 4. **Craft, FAQ, contact and footer** (1 day).
-5. **OG card, favicons, QR decision and translations** (0.5–1 day).
+5. **OG card, favicons, QR/`?play` link and translations** (0.5–1 day).
 6. **Responsive/RTL/accessibility QA** (1 day).
 
 Rough total: **4–6 working days**, excluding photography retouching and native-speaker review.
 
-## 9. What not to change
+## 10. What not to change
 
 - Do not introduce a new typeface; use Noto Serif/Noto Sans.
-- Do not copy the postcard’s placeholder QR or “to be confirmed” text.
+- Do not add a downloadable postcard; the postcard is a physical sales piece. Do not copy “to be confirmed” text.
 - Do not use the postcard’s exact paper texture as a website background; use the colour and matte logic.
 - Do not replace the existing fact set with invented figures; the “On request” values remain until real data is supplied.
