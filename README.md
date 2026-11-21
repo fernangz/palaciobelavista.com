@@ -52,6 +52,7 @@ assets/video/               Film, poster, English VTT
 favicons, site.webmanifest, robots.txt, _headers, vercel.json, .nojekyll
 README.md
 FONT-LICENSES.md
+POSTCARD-DESIGN-CHANGES.md
 ```
 
 - **URLs:** `/` (English), `/fr/`, `/pt/`, `/es/`, `/de/`, `/it/`, `/ja/`, `/zh/`, `/ar/`, `/ru/`, `/hi/`.
@@ -60,6 +61,10 @@ FONT-LICENSES.md
 - Local preview: `python3 -m http.server 8000`, then open `http://127.0.0.1:8000/`, `http://127.0.0.1:8000/fr/`, and so on. Opening a locale folder directly from disk also works, but a local server is closer to production.
 
 ## 3. Design decisions
+
+### Postcard design reference
+
+The supplied postcard artwork is the reference for the next visual pass. The gap analysis, section-by-section changes and open decisions are documented in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). The current typefaces remain Noto Serif and Noto Sans.
 
 ### Direction
 
