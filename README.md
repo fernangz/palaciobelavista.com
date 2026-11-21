@@ -56,7 +56,7 @@ FONT-LICENSES.md
 
 - **URLs:** `/` (English), `/fr/`, `/pt/`, `/es/`, `/de/`, `/it/`, `/ja/`, `/zh/`, `/ar/`, `/ru/`, `/hi/`.
 - The old `/fr.html`, `/pt.html`, `/es.html`, `/de.html` and `/it.html` URLs were removed, not redirected. GitHub Pages serves `folder/index.html` at the folder URL; there is no server-side redirect layer.
-- CSS is inlined in each HTML page; the Prata, Jost and script-specific Noto WOFF2 subsets are inlined as base64. Source masters and build scripts live outside this publishing repo.
+- CSS is inlined in each HTML page; Noto Serif, Noto Sans and the script-specific Noto WOFF2 subsets are inlined as base64. Source masters and build scripts live outside this publishing repo.
 - Local preview: `python3 -m http.server 8000`, then open `http://127.0.0.1:8000/`, `http://127.0.0.1:8000/fr/`, and so on. Opening a locale folder directly from disk also works, but a local server is closer to production.
 
 ## 3. Design decisions
@@ -72,19 +72,19 @@ FONT-LICENSES.md
 
 | Role | Typeface | Treatment |
 | --- | --- | --- |
-| Display | **Prata** | Uncommon high-contrast serif; tight leading; italic emphasis |
-| Body/UI | **Jost** | Geometric sans; light prose, medium labels |
-| Labels | Jost | Uppercase, 1rem, wide tracking, gold |
-| Navigation/buttons | Jost | Uppercase, 1rem, tracked, thin rules |
+| Display | **Noto Serif** | High-contrast editorial serif; tight leading; italic emphasis |
+| Body/UI | **Noto Sans** | Neutral humanist sans; light prose, medium labels |
+| Labels | Noto Sans | Uppercase, 1rem, wide tracking, gold |
+| Navigation/buttons | Noto Sans | Uppercase, 1rem, tracked, thin rules |
 
-- Prata was chosen over ubiquitous luxury serifs (Playfair, Didot) for distinctiveness and old-house authority.
+- Noto Serif + Noto Sans were chosen for complete script coverage and a coherent editorial voice across all eleven languages; the serif keeps old-house authority, while the sans keeps labels quiet and legible.
 - Hero H1: `clamp(4.1rem, 12.5vw, 11.6rem)`; section H2s use fluid clamps up to 7rem.
 - Body: `1.0625rem` mobile, `1.09rem` desktop, 1.7 line-height.
 - **Every label, caption, nav item, form hint and footer line has a 1rem/16px floor.**
 - FAQ questions are `clamp(1.25rem, 2.2vw, 1.7rem)`; answers are `1.0625rem`.
 - Italic display words carry emotion: “light”, “many lights”, “instrument”.
-- Menu/gallery numerals use tracked Jost as editorial folios, not UI counters.
-- **Script coverage:** Prata carries Latin and Cyrillic; Jost carries Latin and basic Cyrillic. Russian therefore uses the same Prata/Jost pairing as the Latin pages, with Cyrillic glyphs included in the embedded subsets.
+- Menu/gallery numerals use tracked Noto Sans as editorial folios, not UI counters.
+- **Script coverage:** Noto Serif and Noto Sans carry Latin and Cyrillic, so Russian uses the same serif/sans pairing as the Latin pages, with Cyrillic glyphs included in the embedded subsets.
 - Japanese, Simplified Chinese, Arabic and Hindi use embedded Noto faces, subset to the characters actually used on that page:
   - Japanese: Noto Serif JP 400 for display; variable Noto Sans JP for body and labels.
   - Chinese: Noto Serif SC 400 for display; variable Noto Sans SC for body and labels.
@@ -150,7 +150,7 @@ FONT-LICENSES.md
 - Fixed header is shallow; a scroll-padding offset keeps anchors clear; state restores on reload/direct anchors.
 - Desktop nav is five quiet links; enquiry CTA is a thin outlined rectangle, not a filled sales button.
 - Mobile uses a two-line toggle and full-screen dialog, not a cramped drawer.
-- Menu is 85% ink with 22px blur, numbered 01–08, Prata links, contact and language switcher at the foot. Native `showModal()`, Escape, backdrop click and focus return.
+- Menu is 85% ink with 22px blur, numbered 01–08, Noto Serif links, contact and language switcher at the foot. Native `showModal()`, Escape, backdrop click and focus return.
 
 ### Hero and narrative
 
@@ -181,7 +181,7 @@ FONT-LICENSES.md
 - Form: two-column editorial layout on desktop, stacked mobile; underlined fields; uppercase gold labels; name/email, phone/interest, message, consent, dark rectangular submit.
 - Short form by design: the dossier is the offer. Native validation, labels, consent, honeypot; mailto fallback or optional static endpoint; `aria-live` status with direct email fallback.
 - The email subject uses the page’s localized hidden `_subject` value, so the mail subject follows the page language.
-- Footer: dark ink, oversized Prata wordmark, italic gold “Bela Vista”; Visit/Discover/Contact columns.
+- Footer: dark ink, oversized Noto Serif wordmark, italic gold “Bela Vista”; Visit/Discover/Contact columns.
 - Language switcher in footer and menu, not header: visible two-letter codes, native-language accessible names, active gold rule. It now lists eleven languages in speaker order.
 - Back-to-top is a plain text arrow link, not a floating button.
 
@@ -277,7 +277,7 @@ Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSit
 Every page carries a visible-to-machines timestamp in the head:
 
 ```html
-<meta name="lastmod" content="2026-11-21T12:01:00+01:00">
+<meta name="lastmod" content="2026-11-21T12:09:00+01:00">
 ```
 
 - It records the **publish time of the current push**, in ISO 8601 with the `Europe/Lisbon` offset.
@@ -327,7 +327,7 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 - Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; poster; `palacio-belavista-en.vtt`.
 - Static OSM map; gold HTML pin; OSM attribution.
 - OG card `assets/img/og-image.jpg` (1200×630); PB monogram favicons.
-- Fonts are embedded as subsets; `FONT-LICENSES.md` records the Prata, Jost and Noto licences.
+- Fonts are embedded as subsets; `FONT-LICENSES.md` records the Noto licences.
 - Original masters/build pipeline are outside this publishing repo.
 
 ## 10. Contact form
@@ -362,7 +362,7 @@ Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Opti
 1. Audited supplied palace photography/film; selected the gallery set.
 2. Removed visible Engel & Völkers watermarks via seam-crop/blend; produced AVIF/WebP/JPEG derivatives.
 3. Compressed film to H.264, generated poster and VTT.
-4. Art direction: Prata + Jost, ivory/ink/gold, mobile-first editorial layout.
+4. Art direction: Noto Serif + Noto Sans, ivory/ink/gold, mobile-first editorial layout.
 5. Built hero, palace, architecture, interiors, craft, garden, film, gallery, private viewings, map, FAQ and form.
 6. Gallery: masonry/carousel, filters, hover light, lightbox, keyboard/swipe, responsive variants.
 7. Film: poster/play treatment, native video dialog, captions.
@@ -382,9 +382,10 @@ Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Opti
 21. Moved every locale from root `xx.html` to `xx/index.html`; updated assets, JS, favicons, manifest, canonicals and hreflang.
 22. Added Japanese, Simplified Chinese, Arabic, Russian and Hindi pages with localized metadata, body copy, gallery captions, form messages and JSON-LD.
 23. Sorted the language selector by total speakers (Ethnologue 2026): EN, ZH, HI, ES, AR, FR, PT, RU, DE, JA, IT.
-24. Added RTL layout support and script-specific font fallbacks for Arabic, CJK, Devanagari and Cyrillic.
+24. Added RTL layout support and script-specific Noto fonts for Arabic, CJK, Devanagari and Cyrillic.
 25. Added `<meta name="lastmod">` to every page and documented the GitHub Pages propagation window and eventual custom-domain migration.
+26. Switched the whole site to Noto Serif + Noto Sans, with script-specific Noto faces and regenerated subsets for all eleven locales and the OG card.
 
 ## 13. Credits
 
-Photography/film from the palace archive. **Prata** (Cyreal), **Jost** (Indestructible Type) and the **Noto** script families under SIL OFL; see `FONT-LICENSES.md`. Map data © OpenStreetMap contributors, ODbL. No third-party analytics/advertising/cookies/tracking. Website copy, photography and film remain property of Palacio Bela Vista; code not licensed for reuse without permission.
+Photography/film from the palace archive. **Noto Serif**, **Noto Sans** and the script-specific Noto families under SIL OFL; see `FONT-LICENSES.md`. Map data © OpenStreetMap contributors, ODbL. No third-party analytics/advertising/cookies/tracking. Website copy, photography and film remain property of Palacio Bela Vista; code not licensed for reuse without permission.

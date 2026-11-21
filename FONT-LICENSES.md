@@ -1,15 +1,13 @@
 # Font licences
 
-The website embeds subset WOFF2 data for the following typefaces. All are
+The website embeds subset WOFF2 data for the **Noto** typefaces. All are
 distributed under the **SIL Open Font License, Version 1.1**.
 
-- **Prata** — Copyright 2011 The Prata Project Authors
-  (https://github.com/cyrealtype/Prata).
-- **Jost** — Copyright 2020 The Jost Project Authors
-  (https://github.com/indestructible-type).
-- **Noto Serif JP / Noto Sans JP** — Copyright 2012 Google Inc. /
-  Copyright 2014–2021 Adobe (http://www.adobe.com/), with Reserved Font
-  Name “Source”.
+- **Noto Serif / Noto Sans** — Copyright 2022 The Noto Project Authors
+  (https://github.com/notofonts/latin-greek-cyrillic).
+- **Noto Serif JP** — Copyright 2012 Google Inc. All Rights Reserved.
+- **Noto Sans JP** — Copyright 2014–2021 Adobe (http://www.adobe.com/),
+  with Reserved Font Name “Source”.
 - **Noto Serif SC** — Copyright 2012 Google Inc. All Rights Reserved.
 - **Noto Sans SC** — Copyright 2014–2021 Adobe (http://www.adobe.com/),
   with Reserved Font Name “Source”.
@@ -17,8 +15,8 @@ distributed under the **SIL Open Font License, Version 1.1**.
   Project Authors (https://github.com/notofonts/arabic).
 - **Noto Serif Devanagari / Noto Sans Devanagari** — Copyright 2022 The
   Noto Project Authors (https://github.com/notofonts/devanagari).
-- **Noto Sans / Noto Sans Symbols** — Copyright 2022 The Noto Project
-  Authors (https://github.com/notofonts).
+- **Noto Sans Symbols** — Copyright 2022 The Noto Project Authors
+  (https://github.com/notofonts/symbols).
 
 The subsets are generated from the published Google Fonts builds and are
 embedded only to render this website. No separate font files are served.
