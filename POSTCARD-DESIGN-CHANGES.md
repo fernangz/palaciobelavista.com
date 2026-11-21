@@ -1,8 +1,10 @@
 # Postcard Design Alignment — Change List
 
-Reference: the supplied postcard artwork in `postcard/` (front and back). The artwork is a design reference, not a page asset. No website visuals have been changed yet.
+Reference: the supplied postcard artwork in `postcard/` (front and back). The artwork is a design reference, not a page asset.
 
-The current typefaces stay: **Noto Serif** and **Noto Sans**. The postcard’s serif is more high-contrast than Noto Serif, so the match will be achieved through case, size, tracking, rules and layout rather than a new typeface.
+**Status: implemented across all eleven locales.** The window mark, cream postcard panels, serif body copy, brass rules, two-line wordmark, sale wording and dark gallery/footer contrast are live. `/?play` is implemented. The postcard’s “Palacete” will be corrected by the designer to “Palacio”.
+
+The current typefaces stay: **Noto Serif** and **Noto Sans**. The postcard’s serif is more high-contrast than Noto Serif, so the match is achieved through case, size, tracking, rules and layout rather than a new typeface.
 
 ## 1. What the postcard establishes
 
@@ -109,7 +111,7 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
 - The postcard has no filled CTA; the closest match is outlined/underlined text.
 - Keep 44px targets and visible focus.
 
-## 4. P1 — Section-by-section changes
+## 4. P1 — Implemented section-by-section changes
 
 ### 4.1 Header
 
@@ -120,7 +122,7 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
   - four quiet text links;
   - `CONTACT` as an outlined rectangle, not a filled button;
   - thin bottom rule only when scrolled.
-- If the opening panel is cream, the header no longer needs the dark frosted-glass state; use a cream/ivory scrolled state with ink text.
+- The cream opening panel replaces the old dark frosted-glass state; the header stays cream with ink text and a hairline on scroll.
 
 ### 4.2 Opening video section
 
@@ -207,7 +209,7 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
 - Replace the PB monogram with the window mark and set the wordmark on two lines.
 - Keep the language selector, contact details and back-to-top.
 
-## 5. P1 — Content changes
+## 5. P1 — Implemented content changes
 
 - Add the postcard promise: **“History. Beauty. A home like no other.”**
 - Add the sale statement: **“Private residence available to purchase.”**
@@ -231,7 +233,7 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
 
 The final QR code must be generated only after the domain is live, so it encodes the final URL. The postcard must print `palaciobelavista.com/?play` next to the QR.
 
-## 7. P2 — Assets and finishing
+## 7. P2 — Implemented assets and finishing
 
 - Regenerate the OG card in the postcard system: cream ground, window mark, two-line wordmark, no dark overlay.
 - Replace the PB monogram favicons with the window mark.
@@ -251,16 +253,14 @@ The final QR code must be generated only after the domain is live, so it encodes
 - Test 320, 390, 768, 1024 and 1440px; repeat in RTL Arabic and CJK locales.
 - Preserve `prefers-reduced-motion`; the postcard is static, so no new motion is needed.
 
-## 9. Suggested implementation order
+## 9. Implementation record
 
-1. **Window-mark tracing + palette tokens** (0.5–1 day).
-2. **Header, wordmark and opening video panel** (1 day).
-3. **Gallery, property identity and characteristics** (1–1.5 days).
-4. **Craft, FAQ, contact and footer** (1 day).
-5. **OG card, favicons, QR link and translations** (0.5–1 day; `/?play` already implemented).
-6. **Responsive/RTL/accessibility QA** (1 day).
-
-Rough total: **4–6 working days**, excluding photography retouching and native-speaker review.
+1. **Window-mark SVG + palette tokens** — done.
+2. **Header, two-line wordmark and opening video panel** — done.
+3. **Gallery, property identity and characteristics** — done; gallery kept dark.
+4. **Craft, FAQ, contact and footer** — done.
+5. **OG card, favicons, `/?play` QR link and translations** — done.
+6. **Responsive/RTL/accessibility and font-coverage QA** — done.
 
 ## 10. What not to change
 

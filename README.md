@@ -64,38 +64,38 @@ POSTCARD-DESIGN-CHANGES.md
 
 ### Postcard design reference
 
-The supplied postcard artwork is the reference for the next visual pass. The gap analysis and section-by-section changes are documented in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). Resolved: the name stays **Palacio Bela Vista**; the window mark becomes the primary logo; the gallery stays dark; the sale wording is **“Private residence available to purchase”**; the postcard QR points to `/?play`; there is no downloadable postcard. The `/?play` video deep link is implemented; the visual postcard redesign is not yet implemented. The current typefaces remain Noto Serif and Noto Sans.
+The supplied postcard is now the site’s visual system: cream stock, split photo/text panels, the line-art window mark, a two-line uppercase wordmark, thin brass rules, serif body copy and deep-ink gallery/footer contrast. The gap analysis and implementation record are in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). Resolved: the name stays **Palacio Bela Vista**; the window mark is the primary logo; the gallery stays dark; the sale wording is **“Private residence available to purchase”**; the postcard QR points to `/?play`; there is no downloadable postcard. The typefaces remain Noto Serif and Noto Sans.
 
 ### Direction
 
 - **Private residence, not a hotel or estate listing.** No price panels, badges, stock photography or glossy marketing cards; the house is the subject.
-- **Editorial, quiet, confident.** Generous white space, thin rules, muted colour, a few strong typographic moments. Gold is an accent, never a wash.
-- **One atmosphere, changing temperature.** Ivory reading sections, ink “rooms” for architecture/gallery/film, dark footer.
-- **Craft in the interface.** Precise spacing, letter-spaced labels, fine borders and a custom PB monogram instead of generic UI chrome.
+- **Editorial, quiet, confident.** Generous cream space, thin brass rules, muted colour, a few strong typographic moments. Brass is an accent, never a wash.
+- **One atmosphere, changing temperature.** Cream postcard panels for reading, a dark gallery for photographic contrast, and a dark footer as the closing block.
+- **Craft in the interface.** Precise spacing, letter-spaced labels, fine borders and the postcard’s open-window mark instead of generic UI chrome.
 
 ### Typography
 
 | Role | Typeface | Treatment |
 | --- | --- | --- |
-| Display | **Noto Serif** | High-contrast editorial serif; tight leading; italic emphasis |
-| Body/UI | **Noto Sans** | Neutral humanist sans; light prose, medium labels |
-| Labels | Noto Sans | Uppercase, 1rem, wide tracking, gold |
+| Display | **Noto Serif** | Uppercase two-line wordmark and key headings; italic emotional lines |
+| Body | **Noto Serif** | Regular editorial prose, 1.06–1.09rem, 1.7 line-height |
+| Labels | Noto Sans | Uppercase, 1rem, wide tracking, brass-deep |
 | Navigation/buttons | Noto Sans | Uppercase, 1rem, tracked, thin rules |
 
 - Noto Serif + Noto Sans were chosen for complete script coverage and a coherent editorial voice across all eleven languages; the serif keeps old-house authority, while the sans keeps labels quiet and legible.
-- Hero H1: `clamp(4.1rem, 12.5vw, 11.6rem)`; section H2s use fluid clamps up to 7rem.
+- Postcard H1: `clamp(2.4rem, 4.4vw, 4rem)`, forced to two lines; section H2s use fluid clamps, with property/characteristics capped at 4.4rem so long translations fit at 320px.
 - Body: `1.0625rem` mobile, `1.09rem` desktop, 1.7 line-height.
 - **Every label, caption, nav item and footer line has a 1rem/16px floor.**
 - FAQ questions are `clamp(1.25rem, 2.2vw, 1.7rem)`; answers are `1.0625rem`.
-- Italic display words carry emotion: “light”, “many lights”, “instrument”.
+- Italic lines carry the emotional register: “History. Beauty. A home like no other.” and “Discover the residence.”
 - Menu/gallery numerals use tracked Noto Sans as editorial folios, not UI counters.
 - **Script coverage:** Noto Serif and Noto Sans carry Latin and Cyrillic, so Russian uses the same serif/sans pairing as the Latin pages, with Cyrillic glyphs included in the embedded subsets.
 - All pages use the same two CSS families, `Noto Serif` and `Noto Sans`. Script-specific faces are registered under those same family names with `unicode-range`, so there are no per-language font stacks or duplicated font-family rules.
 - Japanese, Simplified Chinese, Arabic and Hindi use embedded Noto faces, subset to the characters actually used on that page:
-  - Japanese: Noto Serif JP 400 for display; variable Noto Sans JP for body and labels.
-  - Chinese: Noto Serif SC 400 for display; variable Noto Sans SC for body and labels.
-  - Arabic: Noto Naskh Arabic 400 for display; variable Noto Sans Arabic for body and labels.
-  - Hindi: Noto Serif Devanagari 400 for display; variable Noto Sans Devanagari for body and labels.
+  - Japanese: Noto Serif JP 400 for display and body; variable Noto Sans JP for labels and UI.
+  - Chinese: Noto Serif SC 400 for display and body; variable Noto Sans SC for labels and UI.
+  - Arabic: Noto Naskh Arabic 400 for display and body; variable Noto Sans Arabic for labels and UI.
+  - Hindi: Noto Serif Devanagari 400 for display and body; variable Noto Sans Devanagari for labels and UI.
 - Every page also embeds tiny native-name subsets for `中文`, `हिन्दी`, `العربية`, `Русский`, `日本語` plus arrow and prime subsets, all registered as additional `Noto Sans` faces with exact `unicode-range` values. The language list therefore renders consistently without a separate CSS class.
 - Local system fonts remain as a final fallback, but they are no longer the primary source for any script.
 - No external font request is introduced: all faces are inline WOFF2 data URIs. The trade-off is page weight — Japanese, Chinese and Hindi pages are roughly 0.5–0.6 MB of HTML (Chinese just over 0.6 MB) because the embedded subsets are larger.
@@ -105,22 +105,23 @@ The supplied postcard artwork is the reference for the next visual pass. The gap
 
 | Token | Value | Use |
 | --- | --- | --- |
-| `--ink` | `#11150f` | Gallery, film, footer, buttons |
-| `--ink-2` | `#1a2018` | Image placeholders |
-| `--forest` | `#1d2a21` | Deep green support |
-| `--paper` | `#f2ece1` | Primary light background |
-| `--paper-2` | `#e9e1d3` | Map/characteristics/alternating sections |
-| `--stone` | `#e2d8c7` | Warm neutral support |
-| `--gold` | `#b08a4f` | Primary accent |
-| `--gold-2` | `#d6b77e` | Accent on dark |
-| `--gold-deep` | `#7a5a29` | Accessible gold text on paper |
+| `--ink` | `#1b1a17` | Gallery, footer, dark UI |
+| `--ink-2` | `#24221d` | Image placeholders |
+| `--forest` | `#2a2a24` | Deep neutral support |
+| `--paper` | `#fcf3e4` | Postcard stock / primary background |
+| `--paper-2` | `#f6ead8` | Characteristics / alternate cream |
+| `--mount` | `#dbc9bb` | Outer mount around the cover panel |
+| `--stone` | `#eadcc7` | Warm neutral support |
+| `--gold` | `#9a8468` | Brass rules and accents |
+| `--gold-2` | `#c8b08a` | Brass on ink |
+| `--gold-deep` | `#6e5b43` | Accessible brass text on cream |
 | `--wine` | `#6a2228` | Rare editorial accent |
-| `--text` | `#34362d` | Body copy |
-| `--muted` | `#5c574d` | Secondary copy |
+| `--text` | `#2b2924` | Body copy |
+| `--muted` | `#6b6255` | Secondary copy |
 
-- Gold-deep for labels on ivory; gold-2 on ink for contrast. Ivory-on-ink is the primary pairing.
-- No pure black/white: darkest is green-black ink, lightest is warm paper.
-- Section colour changes are structural: light reading, dark rooms, dark footer.
+- Brass-deep for labels on cream; brass-2 on ink for contrast. Cream-on-ink is the primary pairing in the gallery and footer.
+- No pure black/white: darkest is warm near-black ink, lightest is postcard cream.
+- Section colour changes are structural: cream postcard panels for reading, a dark gallery for photographic contrast, and a dark footer.
 
 ### Layout and spacing
 
@@ -135,7 +136,7 @@ The supplied postcard artwork is the reference for the next visual pass. The gap
 
 | Breakpoint | Changes |
 | --- | --- |
-| `< 22rem` | Wordmark hidden; PB monogram remains |
+| `< 22rem` | Wordmark hidden; window mark remains |
 | `36rem` | Characteristics 2 columns; gallery 2 columns; facts 3 columns |
 | `48rem` | Editorial grids; chapter layouts; 2-column footer |
 | `68rem` | Full desktop nav + header CTA; gallery 3 columns |
@@ -152,11 +153,11 @@ The supplied postcard artwork is the reference for the next visual pass. The gap
 
 ### Header and menu
 
-- Header is transparent over the opening video section; after 48px it becomes **dark frosted glass**: ink gradient, 18px blur, ivory text, gold monogram border.
+- Header is cream over the postcard cover; after 48px it becomes near-opaque cream with a hairline rule, ink text and the window mark.
 - Fixed header is shallow; a scroll-padding offset keeps anchors clear; state restores on reload/direct anchors.
 - Desktop nav is four quiet links — Video, Gallery, Property, Contact. Characteristics, Craft, FAQs and Contact are available in the full-screen menu.
 - Mobile uses a two-line toggle and full-screen dialog, not a cramped drawer.
-- Menu is 85% ink with 22px blur, numbered 01–07, Noto Serif links, contact and language switcher at the foot. Native `showModal()`, Escape, backdrop click and focus return.
+- Menu is cream with 22px blur, numbered 01–07, Noto Serif links, contact and language switcher at the foot. Native `showModal()`, Escape, backdrop click and focus return.
 
 ### Page structure
 
@@ -164,42 +165,42 @@ The page is ordered for a real-estate reader rather than an editorial one:
 
 **Header → Video → Gallery → Property identity → Characteristics → Craft → FAQs → Contact → Footer.**
 
-- **Video** opens the page with the 42-second film, the property name as the single H1, and a click-to-load play control.
+- **Video** opens with a postcard cover panel: framed portrait film poster beside a cream text panel with the window mark, two-line wordmark, location, promise, sale line and a click-to-load play control.
 - **Gallery** follows immediately: 25 photographs, filters and lightbox.
 - **Property identity** gives the address, coordinates, property type and the static area map.
 - **Characteristics** is an eight-field grid: square footage, lot size, bedrooms, bathrooms, build year, construction materials, structural features and sustainability status. Numeric areas and room counts are marked “On request” until the owner supplies figures; full details are offered in the dossier.
 - **Craft** keeps the architectural and craft detail, including stucco, azulejo, marble and the garden façade.
 - **FAQs** sits before the contact block.
-- **Contact** has no form: it gives the email address and a **Request the full dossier** button whose `mailto:` subject and body are prefilled in the page language.
-- **Footer** carries the oversized wordmark, navigation, contact details and the eleven-language selector.
+- **Contact** has no form: it opens with the italic **Discover the residence**, sets **Private film & viewing enquiries** beneath it, then gives the email address and an outlined **Request the full dossier** button whose `mailto:` subject and body are prefilled in the page language.
+- **Footer** carries the window mark, an uppercase two-line wordmark, navigation, contact details and the eleven-language selector.
 
 ### Photography, gallery and lightbox
 
 - Only palace photography; no stock. Crops favour symmetry, doorways, ceiling roundels and garden depth; natural colour, no heavy filters.
-- Images alternate full-bleed, framed editorial plates and tall portraits; explicit dimensions and responsive AVIF/WebP/JPEG.
-- Video poster and below-fold images use native lazy loading; the map is desaturated so the gold pin/card carry colour.
+- The gallery remains full-bleed on dark ink; craft images sit as framed plates on a cream mount; explicit dimensions and responsive AVIF/WebP/JPEG.
+- Video poster and below-fold images use native lazy loading; the map is eager-loaded, desaturated, and carries the brass pin and cream card.
 - Visible Engel & Völkers watermarks were removed by seam-cropping quiet areas and blending, not painting over architecture.
 - Gallery: 3-column masonry desktop, 2-column tablet, 84%-viewport snap carousel mobile. Filters: All, Architecture, Interiors, Craft, Garden, Lisbon.
-- Hover/focus: soft gold radial light + thin inset frame; captions over a bottom gradient.
+- Hover/focus: soft brass radial light + thin inset frame; captions over a bottom gradient.
 - Lightbox: near-black blurred backdrop, large image, title/category, count, arrows, keyboard/swipe, no thumbnail strip; selects a viewport-appropriate variant instead of upscaling.
 
 ### Video, property identity and map
 
 - Video is the first content section: a framed portrait poster with a circular play control, never autoplaying; it opens a native-control dialog with captions. Runtime 42 seconds.
-- Property identity combines the address, coordinates, property type and a **static OSM image**, not an iframe: no cookies, no third-party JS, desaturated basemap, gold HTML pin and visible OSM attribution. Google Maps removed.
+- Property identity combines the address, coordinates, property type and a **static OSM image**, not an iframe: no cookies, no third-party JS, desaturated basemap, brass HTML pin and visible OSM attribution. Google Maps removed.
 - The architecture plan drawing is no longer a separate section; the essential structural facts are carried in Characteristics and Craft.
 
 ### Contact, footer and languages
 
 - **No contact form.** The contact section gives the email address and a single **Request the full dossier** button.
 - The button is a `mailto:` link with a prefilled, localized subject and body asking for more information about the property and the full dossier.
-- Footer: dark ink, oversized Noto Serif wordmark, italic gold “Bela Vista”; Visit/Discover/Contact columns.
-- Language switcher in footer and menu, not header: visible two-letter codes, native-language accessible names, active gold rule. It lists eleven languages in speaker order.
+- Footer: dark ink, window mark, uppercase two-line Noto Serif wordmark with brass “Bela Vista”; Visit/Discover/Contact columns.
+- Language switcher in footer and menu, not header: visible two-letter codes, native-language accessible names, active brass rule. It lists eleven languages in speaker order.
 - Back-to-top is a plain text arrow link, not a floating button.
 
 ### Motion and performance trade-offs
 
-- Restrained motion: image scale, gold gallery light, dialog fades, arrow shifts. No scroll reveals, parallax or clip-path entrances.
+- Restrained motion: image scale, brass gallery light, dialog fades, arrow shifts. No scroll reveals, parallax or clip-path entrances.
 - Scroll reveals were removed because they delayed LCP, blocked native lazy loading and caused ghosting.
 - Anchor navigation is instant; `prefers-reduced-motion` disables transitions/animations/smooth scrolling.
 - Fonts inlined as per-script subset WOFF2 data URIs; critical CSS inlined; one deferred vanilla JS file; no framework hydration.
@@ -211,10 +212,10 @@ The page is ordered for a real-estate reader rather than an editorial one:
 ### Accessibility-driven visual decisions
 
 - The 16px floor changed the scale: labels, captions and nav are larger and the layout was re-spaced around them.
-- Header became dark frosted glass rather than pale translucent paper so it always contrasts with content beneath.
+- Header became cream over the postcard cover, with ink text and a hairline on scroll, so it belongs to the same paper system as the page.
 - Language switchers moved out of the header so 16px labels would not crowd primary navigation.
 - Footer reflows earlier; German compounds hyphenate; long email addresses wrap safely.
-- Icon-only controls have accessible names; text controls stay text; gold is darkened to gold-deep on light paper.
+- Icon-only controls have accessible names; text controls stay text; brass is darkened to brass-deep on light paper.
 - New locales translate `alt`, `aria-label`, lightbox titles/captions, gallery category labels, contact copy and the film close controls.
 - Arabic keeps native RTL reading order; focus order follows the DOM.
 
@@ -237,8 +238,8 @@ The site targets **WCAG 2.2 AA** and was audited with Lighthouse plus manual che
 - **No text below 1rem/16px.** FAQ questions are larger; answers are `1.0625rem`.
 - Body copy has generous line-height and readable measures.
 - German compounds use `hyphens: auto`; footer headings are non-breaking; overflow checked at all listed widths in the Latin locales.
-- Header: transparent over the opening video, dark frosted glass on scroll; ivory-on-dark composite with gold accent; 18px blur.
-- `:focus-visible`: 2px gold outline, 4px offset. Skip link moves focus to `main`.
+- Header: cream over the postcard cover, ink text and a hairline on scroll; 18px blur.
+- `:focus-visible`: 2px brass outline, 4px offset. Skip link moves focus to `main`.
 - Minimum **44px** targets for nav, buttons, language and footer links.
 - Native `<dialog>` menu with `showModal()`, Escape, backdrop click, focus restoration.
 - Lightbox: arrow keys, Escape, focus return, labelled prev/next.
@@ -335,10 +336,10 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 - 25 gallery photographs in AVIF/WebP/JPEG at multiple widths; responsive gallery and property sets.
 - Watermarked sources cleaned by quiet-area seam-crop/blend; originals left outside this repo.
 - Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; poster; `palacio-belavista-en.vtt`.
-- Static OSM map; gold HTML pin; OSM attribution.
-- OG card `assets/img/og-image.jpg` (1200×630); PB monogram favicons.
+- Static OSM map; brass HTML pin; OSM attribution.
+- OG card `assets/img/og-image.jpg` (1200×630) in the postcard system; window-mark favicons and PWA icons.
 - Fonts are embedded as subsets; `FONT-LICENSES.md` records the Noto licences.
-- Unused wide hero image variants and the duplicate `favicon-48.png` were removed after the page restructure; the remaining asset set is fully referenced.
+- Unused wide hero image variants and the duplicate `favicon-48.png` were removed after the page restructure; the remaining asset set is fully referenced. The supplied postcard artwork stays outside the published assets.
 - Original masters/build pipeline are outside this publishing repo.
 
 ## 10. Contact and dossier
@@ -373,15 +374,15 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 1. Audited supplied palace photography/film; selected the gallery set.
 2. Removed visible Engel & Völkers watermarks via seam-crop/blend; produced AVIF/WebP/JPEG derivatives.
 3. Compressed film to H.264, generated poster and VTT.
-4. Art direction: Noto Serif + Noto Sans, ivory/ink/gold, mobile-first editorial layout.
+4. Art direction: Noto Serif + Noto Sans, cream/ink/brass, mobile-first editorial layout.
 5. Built the original editorial sections: hero, palace, architecture, interiors, craft, garden, film, gallery, private viewings, map, FAQ and form.
 6. Gallery: masonry/carousel, filters, hover light, lightbox, keyboard/swipe, responsive variants.
 7. Film: poster/play treatment, native video dialog, captions.
-8. Replaced Google Maps with a static OSM plan, gold pin and attribution.
+8. Replaced Google Maps with a static OSM plan, brass pin and attribution.
 9. Form: accessible fields, consent, honeypot, mailto fallback/static endpoint (later removed in favour of the dossier mailto).
 10. SEO: canonical, OG/Twitter, JSON-LD, image metadata, hreflang, sitemap.
 11. Accessibility: 16px floor, contrast, 44px targets, skip link, focus, landmarks, keyboard dialogs, reduced motion.
-12. Header: transparent over the opening video; dark frosted glass on scroll.
+12. Header: cream over the postcard cover; hairline cream on scroll.
 13. Added French, Portuguese, Spanish, German and Italian with localized metadata/JSON-LD/switchers.
 14. Responsive fixes: tablet footer, German hyphenation, no overflow, localized counts/hints.
 15. Performance: inline fonts, optimized images, deferred JS, static map, no third-party; Lighthouse 100s.
@@ -398,6 +399,8 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 26. Switched the whole site to Noto Serif + Noto Sans, with script-specific Noto faces and regenerated subsets for all eleven locales and the OG card.
 27. Restructured every locale into Header → Video → Gallery → Property identity → Characteristics → Craft → FAQs → Contact → Footer; removed the form and added the localized full-dossier mailto.
 28. Removed unused wide hero image variants and `favicon-48.png`, and rechecked every remaining asset against the published references.
+29. Implemented the postcard design system: window mark, cream split panels, serif body copy, brass rules, two-line wordmark, “Private residence available to purchase”, and a dark gallery/footer contrast.
+30. Added the `/?play` postcard QR deep link and regenerated the OG card and favicons in the postcard system.
 
 ## 13. Credits
 
