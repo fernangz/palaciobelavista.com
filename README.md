@@ -15,7 +15,7 @@ Static website for **Palacio Bela Vista**, a Pombaline palace at **Rua do Ataíd
 
 ## 1. Project overview
 
-A private Pombaline residence in Lisbon, presented through architecture, interiors, craft, garden, film and a 25-image gallery, with a quiet private-viewing and dossier enquiry flow.
+A private Pombaline residence in Lisbon, presented through film, a 25-image gallery, property identity, characteristics and architectural craft, with a direct full-dossier request.
 
 | Field | Value |
 | --- | --- |
@@ -46,7 +46,7 @@ de/index.html               German
 ja/index.html               Japanese
 it/index.html               Italian
 
-app.js                      Menu, filters, lightbox, film, form
+app.js                      Menu, filters, lightbox, film
 assets/img/                 Responsive AVIF/WebP/JPEG, map, icons, OG card
 assets/video/               Film, poster, English VTT
 favicons, site.webmanifest, robots.txt, _headers, vercel.json, .nojekyll
@@ -80,7 +80,7 @@ FONT-LICENSES.md
 - Noto Serif + Noto Sans were chosen for complete script coverage and a coherent editorial voice across all eleven languages; the serif keeps old-house authority, while the sans keeps labels quiet and legible.
 - Hero H1: `clamp(4.1rem, 12.5vw, 11.6rem)`; section H2s use fluid clamps up to 7rem.
 - Body: `1.0625rem` mobile, `1.09rem` desktop, 1.7 line-height.
-- **Every label, caption, nav item, form hint and footer line has a 1rem/16px floor.**
+- **Every label, caption, nav item and footer line has a 1rem/16px floor.**
 - FAQ questions are `clamp(1.25rem, 2.2vw, 1.7rem)`; answers are `1.0625rem`.
 - Italic display words carry emotion: “light”, “many lights”, “instrument”.
 - Menu/gallery numerals use tracked Noto Sans as editorial folios, not UI counters.
@@ -104,7 +104,7 @@ FONT-LICENSES.md
 | `--ink-2` | `#1a2018` | Image placeholders |
 | `--forest` | `#1d2a21` | Deep green support |
 | `--paper` | `#f2ece1` | Primary light background |
-| `--paper-2` | `#e9e1d3` | Map/form/alternating sections |
+| `--paper-2` | `#e9e1d3` | Map/characteristics/alternating sections |
 | `--stone` | `#e2d8c7` | Warm neutral support |
 | `--gold` | `#b08a4f` | Primary accent |
 | `--gold-2` | `#d6b77e` | Accent on dark |
@@ -131,10 +131,10 @@ FONT-LICENSES.md
 | Breakpoint | Changes |
 | --- | --- |
 | `< 22rem` | Wordmark hidden; PB monogram remains |
-| `36rem` | 2-column form rows; gallery 2 columns; facts 3 columns |
+| `36rem` | Characteristics 2 columns; gallery 2 columns; facts 3 columns |
 | `48rem` | Editorial grids; chapter layouts; 2-column footer |
 | `68rem` | Full desktop nav + header CTA; gallery 3 columns |
-| `90rem` | 3-column footer; maximum hero scale |
+| `90rem` | 3-column footer; maximum display scale |
 
 - Navigation enters the full-screen menu below 68rem; it never wraps or crowds on tablets.
 - Footer stays 2-column until 90rem so translated labels fit.
@@ -147,43 +147,49 @@ FONT-LICENSES.md
 
 ### Header and menu
 
-- Header transparent over hero; after 48px it becomes **dark frosted glass**: ink gradient, 18px blur, ivory text, gold monogram border.
+- Header is transparent over the opening video section; after 48px it becomes **dark frosted glass**: ink gradient, 18px blur, ivory text, gold monogram border.
 - Fixed header is shallow; a scroll-padding offset keeps anchors clear; state restores on reload/direct anchors.
-- Desktop nav is five quiet links; enquiry CTA is a thin outlined rectangle, not a filled sales button.
+- Desktop nav is four quiet links — Video, Gallery, Property, Contact. Characteristics, Craft, FAQs and Contact are available in the full-screen menu.
 - Mobile uses a two-line toggle and full-screen dialog, not a cramped drawer.
-- Menu is 85% ink with 22px blur, numbered 01–08, Noto Serif links, contact and language switcher at the foot. Native `showModal()`, Escape, backdrop click and focus return.
+- Menu is 85% ink with 22px blur, numbered 01–07, Noto Serif links, contact and language switcher at the foot. Native `showModal()`, Escape, backdrop click and focus return.
 
-### Hero and narrative
+### Page structure
 
-- Full-viewport atrium image, dark shade, two-line H1: “Palacio” roman / “Bela Vista” italic.
-- Address in a small translucent label; short lede; two actions; bottom rail with coordinates, building rhythm and scroll cue.
-- Image focal point 38% vertical keeps the lantern visible under the headline. No autoplay video or carousel.
-- Page order: Hero → Palace → Architecture → Interiors → Craft → Garden & river → Film → Gallery → Private viewings → Find us → FAQ → Request dossier → Footer.
-- Commercial content is deliberately deferred until after the house has been shown; FAQ sits immediately before the enquiry.
+The page is ordered for a real-estate reader rather than an editorial one:
+
+**Header → Video → Gallery → Property identity → Characteristics → Craft → FAQs → Contact → Footer.**
+
+- **Video** opens the page with the 42-second film, the property name as the single H1, and a click-to-load play control.
+- **Gallery** follows immediately: 25 photographs, filters and lightbox.
+- **Property identity** gives the address, coordinates, property type and the static area map.
+- **Characteristics** is an eight-field grid: square footage, lot size, bedrooms, bathrooms, build year, construction materials, structural features and sustainability status. Numeric areas and room counts are marked “On request” until the owner supplies figures; full details are offered in the dossier.
+- **Craft** keeps the architectural and craft detail, including stucco, azulejo, marble and the garden façade.
+- **FAQs** sits before the contact block.
+- **Contact** has no form: it gives the email address and a **Request the full dossier** button whose `mailto:` subject and body are prefilled in the page language.
+- **Footer** carries the oversized wordmark, navigation, contact details and the eleven-language selector.
 
 ### Photography, gallery and lightbox
 
 - Only palace photography; no stock. Crops favour symmetry, doorways, ceiling roundels and garden depth; natural colour, no heavy filters.
 - Images alternate full-bleed, framed editorial plates and tall portraits; explicit dimensions and responsive AVIF/WebP/JPEG.
-- Hero `fetchpriority="high"`; below-fold images native lazy; map desaturated so the gold pin/card carry colour.
+- Video poster and below-fold images use native lazy loading; the map is desaturated so the gold pin/card carry colour.
 - Visible Engel & Völkers watermarks were removed by seam-cropping quiet areas and blending, not painting over architecture.
 - Gallery: 3-column masonry desktop, 2-column tablet, 84%-viewport snap carousel mobile. Filters: All, Architecture, Interiors, Craft, Garden, Lisbon.
 - Hover/focus: soft gold radial light + thin inset frame; captions over a bottom gradient.
 - Lightbox: near-black blurred backdrop, large image, title/category, count, arrows, keyboard/swipe, no thumbnail strip; selects a viewport-appropriate variant instead of upscaling.
 
-### Film, plan and map
+### Video, property identity and map
 
-- Film presented as a framed portrait poster with circular play control; never autoplays; opens a native-control dialog with captions. Runtime 42 seconds.
-- Architecture plan is a custom reduced line drawing. Tiny SVG labels were removed for the 16px floor; the caption explains three storeys to the street and four to the garden.
-- Map is a **static OSM image**, not an iframe: no cookies, no third-party JS, desaturated basemap, gold HTML pin, address/coordinates/metro card and visible OSM attribution. Google Maps removed.
+- Video is the first content section: a framed portrait poster with a circular play control, never autoplaying; it opens a native-control dialog with captions. Runtime 42 seconds.
+- Property identity combines the address, coordinates, property type and a **static OSM image**, not an iframe: no cookies, no third-party JS, desaturated basemap, gold HTML pin and visible OSM attribution. Google Maps removed.
+- The architecture plan drawing is no longer a separate section; the essential structural facts are carried in Characteristics and Craft.
 
-### Form, footer and languages
+### Contact, footer and languages
 
-- Form: two-column editorial layout on desktop, stacked mobile; underlined fields; uppercase gold labels; name/email, phone/interest, message, consent, dark rectangular submit.
-- Short form by design: the dossier is the offer. Native validation, labels, consent, honeypot; mailto fallback or optional static endpoint; `aria-live` status with direct email fallback.
-- The email subject uses the page’s localized hidden `_subject` value, so the mail subject follows the page language.
+- **No contact form.** The contact section gives the email address and a single **Request the full dossier** button.
+- The button is a `mailto:` link with a prefilled, localized subject and body asking for more information about the property and the full dossier.
 - Footer: dark ink, oversized Noto Serif wordmark, italic gold “Bela Vista”; Visit/Discover/Contact columns.
-- Language switcher in footer and menu, not header: visible two-letter codes, native-language accessible names, active gold rule. It now lists eleven languages in speaker order.
+- Language switcher in footer and menu, not header: visible two-letter codes, native-language accessible names, active gold rule. It lists eleven languages in speaker order.
 - Back-to-top is a plain text arrow link, not a floating button.
 
 ### Motion and performance trade-offs
@@ -204,14 +210,14 @@ FONT-LICENSES.md
 - Language switchers moved out of the header so 16px labels would not crowd primary navigation.
 - Footer reflows earlier; German compounds hyphenate; long email addresses wrap safely.
 - Icon-only controls have accessible names; text controls stay text; gold is darkened to gold-deep on light paper.
-- New locales translate `alt`, `aria-label`, lightbox titles/captions, gallery category labels, form messages and the film close controls.
+- New locales translate `alt`, `aria-label`, lightbox titles/captions, gallery category labels, contact copy and the film close controls.
 - Arabic keeps native RTL reading order; focus order follows the DOM.
 
 ### Rejected directions
 
 - Google Maps iframe/embed — privacy, performance, visual control.
 - Third-party fonts, analytics, heatmaps, cookie banner, chat widget — omitted entirely.
-- Autoplaying hero video — performance and tone.
+- Autoplaying video — performance and tone.
 - Scroll-reveal/parallax and section `content-visibility` — LCP, ghosting and layout jumps.
 - Tiny 10–12px luxury captions — inaccessible; 16px floor.
 - Header language dropdown — moved to menu/footer.
@@ -226,18 +232,16 @@ The site targets **WCAG 2.2 AA** and was audited with Lighthouse plus manual che
 - **No text below 1rem/16px.** FAQ questions are larger; answers are `1.0625rem`.
 - Body copy has generous line-height and readable measures.
 - German compounds use `hyphens: auto`; footer headings are non-breaking; overflow checked at all listed widths in the Latin locales.
-- Header: transparent over hero, dark frosted glass on scroll; ivory-on-dark composite with gold accent; 18px blur.
+- Header: transparent over the opening video, dark frosted glass on scroll; ivory-on-dark composite with gold accent; 18px blur.
 - `:focus-visible`: 2px gold outline, 4px offset. Skip link moves focus to `main`.
-- Minimum **44px** targets for nav, buttons, form controls, language and footer links.
+- Minimum **44px** targets for nav, buttons, language and footer links.
 - Native `<dialog>` menu with `showModal()`, Escape, backdrop click, focus restoration.
 - Lightbox: arrow keys, Escape, focus return, labelled prev/next.
 - Film dialog: native controls, labelled close.
 - `prefers-reduced-motion` disables animation, transitions and smooth scroll.
-- `aria-live` form status; labelled fields; required name/email/message/consent; consent not pre-checked; honeypot.
-- Form never claims to send when it opens mail; status explains and gives the direct email.
-- Semantic landmarks/headings; one H1 per page; correct `<html lang>`; localized alt text; descriptive map alt and OSM attribution.
+- Semantic landmarks/headings; one H1 per page (the property name in the video section); correct `<html lang>`; localized alt text; descriptive map alt and OSM attribution.
 - Arabic pages set `dir="rtl"` and keep logical reading order; CJK/Hindi pages declare the correct language subtag.
-- Known limits: published VTT captions are English in every locale (the standalone French export has French VTT); no backend validation; noindex is not privacy; the new translations should receive a native-speaker review before launch.
+- Known limits: published VTT captions are English in every locale (the standalone French export has French VTT); numeric areas and room counts are marked “On request” pending owner data; noindex is not privacy; the new translations should receive a native-speaker review before launch.
 
 ## 5. Internationalisation
 
@@ -257,7 +261,7 @@ The site targets **WCAG 2.2 AA** and was audited with Lighthouse plus manual che
 
 The language selector is sorted by **total number of speakers worldwide**, using the Ethnologue 2026 estimates summarised in [Wikipedia’s list of languages by total number of speakers](https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers). Arabic and French are effectively tied (335M vs 334M); the table follows the published order. Counts are estimates, not exact census figures. The selector codes are `EN · ZH · HI · ES · AR · FR · PT · RU · DE · JA · IT`.
 
-Every locale has localized copy, navigation, form labels/options, FAQ, footer, title/description, OG/Twitter metadata, JSON-LD (`inLanguage`, descriptions, FAQ, amenity names, image captions), gallery captions/categories, form status messages and mail subject, plus hreflang alternates including `x-default`.
+Every locale has localized copy, navigation, property identity, characteristics, contact copy, FAQ, footer, title/description, OG/Twitter metadata, JSON-LD (`inLanguage`, descriptions, FAQ, amenity names, image captions), gallery captions/categories and the prefilled dossier email, plus hreflang alternates including `x-default`.
 
 The gallery count and filter counts use locale-aware plural forms: Arabic (1 / 2 / 3–10 / 11+), Russian (1 / 2–4 / 5+), Hindi (1 / plural), and invariant forms for Chinese and Japanese.
 
@@ -278,7 +282,7 @@ Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSit
 Every page carries a visible-to-machines timestamp in the head:
 
 ```html
-<meta name="lastmod" content="2026-11-21T12:13:00+01:00">
+<meta name="lastmod" content="2026-11-21T12:36:00+01:00">
 ```
 
 - It records the **publish time of the current push**, in ISO 8601 with the `Europe/Lisbon` offset.
@@ -319,11 +323,11 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
   --output=html --output-path=./lighthouse-desktop.html
 ```
 
-**Improvements retained:** responsive AVIF/WebP/JPEG with dimensions; hero preload/fetchpriority; inline subset fonts; static OSM (no iframe); click-to-load film; single small vanilla JS; no analytics/third-party; removed reveal/clip effects and `content-visibility`; stable aspect ratios; reduced TBT/CLS. On macOS headless, `--disable-gpu` avoids a spurious GPU-teardown long task.
+**Improvements retained:** responsive AVIF/WebP/JPEG with dimensions; poster/image preload where useful; inline subset fonts; static OSM (no iframe); click-to-load film; single small vanilla JS; no analytics/third-party; removed reveal/clip effects and `content-visibility`; stable aspect ratios; reduced TBT/CLS. On macOS headless, `--disable-gpu` avoids a spurious GPU-teardown long task.
 
 ## 9. Assets
 
-- 25 gallery photographs in AVIF/WebP/JPEG at multiple widths; responsive hero and architectural sets.
+- 25 gallery photographs in AVIF/WebP/JPEG at multiple widths; responsive gallery and property sets.
 - Watermarked sources cleaned by quiet-area seam-crop/blend; originals left outside this repo.
 - Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; poster; `palacio-belavista-en.vtt`.
 - Static OSM map; gold HTML pin; OSM attribution.
@@ -331,11 +335,11 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 - Fonts are embedded as subsets; `FONT-LICENSES.md` records the Noto licences.
 - Original masters/build pipeline are outside this publishing repo.
 
-## 10. Contact form
+## 10. Contact and dossier
 
-Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Optional static endpoint via `data-endpoint` + `app.js` (Formspree/FormSubmit); no server/secrets. Honeypot `company`/`_gotcha`; provider spam controls if used. No analytics/tracking. Test an endpoint after configuring it; published copy uses mailto.
+There is no contact form. The contact section gives `enquiries@palaciobelavista.com` and a **Request the full dossier** button. The button is a `mailto:` link with a prefilled subject and body, localized per page, that asks for more information about the property and the full dossier. No analytics or tracking.
 
-> The email domain depends on `palaciobelavista.com`, which is not yet registered or delegated. Until it is, the mailto path cannot deliver mail even though the form works as designed.
+> The email domain depends on `palaciobelavista.com`, which is not yet registered or delegated. Until it is, the mailto link cannot deliver mail even though it opens correctly.
 
 ## 11. Deployment
 
@@ -355,7 +359,7 @@ Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Opti
 2. Add a `CNAME` file containing `palaciobelavista.com`.
 3. Enable the custom domain in the repository’s Pages settings and wait for the TLS certificate.
 4. Replace `https://fernangz.github.io/palaciobelavista.com` with `https://palaciobelavista.com` in all eleven pages: canonical, hreflang, `og:url`, `og:image`, Twitter image, JSON-LD URLs and `@id` values.
-5. Set up MX/mail for `enquiries@palaciobelavista.com` (or change the published address), then test the form end-to-end.
+5. Set up MX/mail for `enquiries@palaciobelavista.com` (or change the published address), then test the dossier mailto link end-to-end.
 6. Re-test old links, the language switcher and the canonical/hreflang set after the domain switch.
 
 ## 12. Task recap
@@ -364,14 +368,14 @@ Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Opti
 2. Removed visible Engel & Völkers watermarks via seam-crop/blend; produced AVIF/WebP/JPEG derivatives.
 3. Compressed film to H.264, generated poster and VTT.
 4. Art direction: Noto Serif + Noto Sans, ivory/ink/gold, mobile-first editorial layout.
-5. Built hero, palace, architecture, interiors, craft, garden, film, gallery, private viewings, map, FAQ and form.
+5. Built the original editorial sections: hero, palace, architecture, interiors, craft, garden, film, gallery, private viewings, map, FAQ and form.
 6. Gallery: masonry/carousel, filters, hover light, lightbox, keyboard/swipe, responsive variants.
 7. Film: poster/play treatment, native video dialog, captions.
 8. Replaced Google Maps with a static OSM plan, gold pin and attribution.
-9. Form: accessible fields, consent, honeypot, mailto fallback/static endpoint.
+9. Form: accessible fields, consent, honeypot, mailto fallback/static endpoint (later removed in favour of the dossier mailto).
 10. SEO: canonical, OG/Twitter, JSON-LD, image metadata, hreflang, sitemap.
 11. Accessibility: 16px floor, contrast, 44px targets, skip link, focus, landmarks, keyboard dialogs, reduced motion.
-12. Header: transparent hero state; dark frosted glass on scroll.
+12. Header: transparent over the opening video; dark frosted glass on scroll.
 13. Added French, Portuguese, Spanish, German and Italian with localized metadata/JSON-LD/switchers.
 14. Responsive fixes: tablet footer, German hyphenation, no overflow, localized counts/hints.
 15. Performance: inline fonts, optimized images, deferred JS, static map, no third-party; Lighthouse 100s.
@@ -381,11 +385,12 @@ Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Opti
 19. Moved only the final site contents into this repo; committed and pushed.
 20. Disallowed all crawlers, added noindex to every page, removed the sitemap, enabled GitHub Pages.
 21. Moved every locale from root `xx.html` to `xx/index.html`; updated assets, JS, favicons, manifest, canonicals and hreflang.
-22. Added Japanese, Simplified Chinese, Arabic, Russian and Hindi pages with localized metadata, body copy, gallery captions, form messages and JSON-LD.
+22. Added Japanese, Simplified Chinese, Arabic, Russian and Hindi pages with localized metadata, body copy, gallery captions, contact copy and JSON-LD.
 23. Sorted the language selector by total speakers (Ethnologue 2026): EN, ZH, HI, ES, AR, FR, PT, RU, DE, JA, IT.
 24. Added RTL layout support and script-specific Noto fonts for Arabic, CJK, Devanagari and Cyrillic.
 25. Added `<meta name="lastmod">` to every page and documented the GitHub Pages propagation window and eventual custom-domain migration.
 26. Switched the whole site to Noto Serif + Noto Sans, with script-specific Noto faces and regenerated subsets for all eleven locales and the OG card.
+27. Restructured every locale into Header → Video → Gallery → Property identity → Characteristics → Craft → FAQs → Contact → Footer; removed the form and added the localized full-dossier mailto.
 
 ## 13. Credits
 
