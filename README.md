@@ -49,6 +49,7 @@ it/index.html               Italian
 app.js                      Menu, filters, lightbox, film
 assets/img/                 Responsive AVIF/WebP/JPEG, map, icons, OG card
 assets/video/               Film, poster, English VTT
+qr/                         Print-ready postcard QR SVG
 favicons, site.webmanifest, robots.txt, _headers, vercel.json, .nojekyll
 README.md
 FONT-LICENSES.md
@@ -338,6 +339,7 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 - Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; 1:1 entrance-hall poster in AVIF/WebP/JPEG; `palacio-belavista-en.vtt`.
 - Static OSM map; brass HTML pin; OSM attribution.
 - OG card `assets/img/og-image.jpg` (1200×630) in the postcard system; window-mark favicons and PWA icons.
+- Postcard QR `qr/palacio-belavista-play-qr.svg` (1200×1200 SVG, cream/ink/brass) pointing to `https://palaciobelavista.com/?play`.
 - Fonts are embedded as subsets; `FONT-LICENSES.md` records the Noto licences.
 - Unused wide hero image variants and the duplicate `favicon-48.png` were removed after the page restructure; the remaining asset set is fully referenced. The supplied postcard artwork stays outside the published assets.
 - Original masters/build pipeline are outside this publishing repo.
