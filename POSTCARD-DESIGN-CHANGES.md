@@ -29,7 +29,7 @@ The current typefaces stay: **Noto Serif** and **Noto Sans**. The postcard’s s
 
 ### Content cues
 
-- “PALACETE BELA VISTA” — note the postcard uses **Palacete**, while the site currently uses **Palacio**.
+- “PALACIO BELA VISTA” — the website name is fixed. The postcard’s current “Palacete” wording will be revised by the designer to “Palacio”.
 - “LISBON · PORTUGAL”
 - “History. Beauty. A home like no other.”
 - “A historic palace offered for sale.”
@@ -39,14 +39,19 @@ The current typefaces stay: **Noto Serif** and **Noto Sans**. The postcard’s s
 - “Private film & viewing enquiries”
 - A QR placeholder — destination not yet defined.
 
-## 2. Decisions needed before implementation
+## 2. Decisions
 
-1. **Name:** keep **Palacio Bela Vista** or adopt the postcard’s **Palacete Bela Vista**? This affects every page, schema, OG card and translation. Do not mix the two.
-2. **Sale positioning:** the postcard says “A historic palace offered for sale.” The site currently says “private residence” and does not mention sale. Confirm the public wording: “offered for sale”, “private sale”, or “available on request”.
-3. **Logo:** replace the PB monogram with the window/bridge/balustrade line mark, or keep PB and use the window mark only as a cover illustration?
-4. **Gallery/footer contrast:** go fully cream like the postcard, or keep the dark gallery/footer as a deliberate counterpoint? The closest match is cream gallery and cream footer.
-5. **QR:** where should it point — the film, the dossier mailto, or the website itself? The postcard’s QR is currently a placeholder.
-6. **Postcard download:** should the website offer a printable/downloadable postcard, or is the artwork only a design reference?
+### Resolved
+
+- **Name:** **Palacio Bela Vista**. The website name is fixed; the postcard’s “Palacete” will be updated by the designer to “Palacio”. All website wordmarks, metadata and translations stay on “Palacio”.
+
+### Still needed
+
+1. **Sale positioning:** the postcard says “A historic palace offered for sale.” The site currently says “private residence” and does not mention sale. Confirm the public wording: “offered for sale”, “private sale”, or “available on request”.
+2. **Logo:** replace the PB monogram with the window/bridge/balustrade line mark, or keep PB and use the window mark only as a cover illustration?
+3. **Gallery/footer contrast:** go fully cream like the postcard, or keep the dark gallery/footer as a deliberate counterpoint? The closest match is cream gallery and cream footer.
+4. **QR:** where should it point — the film, the dossier mailto, or the website itself? The postcard’s QR is currently a placeholder.
+5. **Postcard download:** should the website offer a printable/downloadable postcard, or is the artwork only a design reference?
 
 ## 3. P0 — Brand and global tokens
 
@@ -64,7 +69,7 @@ The current typefaces stay: **Noto Serif** and **Noto Sans**. The postcard’s s
 ### 3.2 Wordmark treatment
 
 - Two centred lines, uppercase:
-  - `PALACETE` / `BELA VISTA` or `PALACIO` / `BELA VISTA`.
+  - `PALACIO` / `BELA VISTA`.
 - Noto Serif 400, tight line-height, tracking around `0.08–0.12em`.
 - Location line below: `LISBON · PORTUGAL`, Noto Sans, 1rem floor, wide tracking.
 - Thin rule below, roughly 70% of the text-panel width.
