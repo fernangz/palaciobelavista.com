@@ -49,11 +49,12 @@ assets/img/                 Responsive AVIF/WebP/JPEG, map, icons, OG card
 assets/video/               Film, poster, English VTT
 favicons, site.webmanifest, robots.txt, _headers, vercel.json, .nojekyll
 README.md
+FONT-LICENSES.md
 ```
 
 - **URLs:** `/` (English), `/fr/`, `/pt/`, `/es/`, `/de/`, `/it/`, `/ja/`, `/zh/`, `/ar/`, `/ru/`, `/hi/`.
 - The old `/fr.html`, `/pt.html`, `/es.html`, `/de.html` and `/it.html` URLs were removed, not redirected. GitHub Pages serves `folder/index.html` at the folder URL; there is no server-side redirect layer.
-- CSS is inlined in each HTML page; the Prata and Jost WOFF2 subsets are inlined as base64. Source masters and build scripts live outside this publishing repo.
+- CSS is inlined in each HTML page; the Prata, Jost and script-specific Noto WOFF2 subsets are inlined as base64. Source masters and build scripts live outside this publishing repo.
 - Local preview: `python3 -m http.server 8000`, then open `http://127.0.0.1:8000/`, `http://127.0.0.1:8000/fr/`, and so on. Opening a locale folder directly from disk also works, but a local server is closer to production.
 
 ## 3. Design decisions
@@ -81,13 +82,16 @@ README.md
 - FAQ questions are `clamp(1.25rem, 2.2vw, 1.7rem)`; answers are `1.0625rem`.
 - Italic display words carry emotion: “light”, “many lights”, “instrument”.
 - Menu/gallery numerals use tracked Jost as editorial folios, not UI counters.
-- **Script coverage:** Prata and Jost do not contain CJK, Arabic or Devanagari glyphs. New locale pages therefore add local system fallbacks:
-  - Japanese: Hiragino Mincho / Yu Mincho and Hiragino Sans / Yu Gothic.
-  - Chinese: Songti SC / Noto Serif SC and PingFang SC / Noto Sans SC.
-  - Hindi: Noto Serif/Sans Devanagari and Kohinoor Devanagari.
-  - Arabic: Noto Naskh Arabic / Geeza Pro and Noto Sans Arabic / Geeza Pro.
-  - Russian: Prata/Jost first, then PT Serif/PT Sans and Noto fallbacks.
-- No external font request is introduced; the fallbacks use fonts already present on the visitor’s system.
+- **Script coverage:** Prata carries Latin and Cyrillic; Jost carries Latin and basic Cyrillic. Russian therefore uses the same Prata/Jost pairing as the Latin pages, with Cyrillic glyphs included in the embedded subsets.
+- Japanese, Simplified Chinese, Arabic and Hindi use embedded Noto faces, subset to the characters actually used on that page:
+  - Japanese: Noto Serif JP 400 for display; variable Noto Sans JP for body and labels.
+  - Chinese: Noto Serif SC 400 for display; variable Noto Sans SC for body and labels.
+  - Arabic: Noto Naskh Arabic 400 for display; variable Noto Sans Arabic for body and labels.
+  - Hindi: Noto Serif Devanagari 400 for display; variable Noto Sans Devanagari for body and labels.
+- Every page also embeds five tiny label subsets for the native language names in the contact list — `中文`, `हिन्दी`, `العربية`, `Русский`, `日本語` — plus arrow and prime symbol subsets. The language list therefore renders consistently on every locale.
+- Local system fonts remain as a final fallback, but they are no longer the primary source for any script.
+- No external font request is introduced: all faces are inline WOFF2 data URIs. The trade-off is page weight — Japanese, Chinese and Hindi pages are roughly 0.5–0.6 MB of HTML (Chinese just over 0.6 MB) because the embedded subsets are larger.
+- Font licences and copyright notices are in `FONT-LICENSES.md`.
 
 ### Colour tokens
 
@@ -184,11 +188,11 @@ README.md
 - Restrained motion: image scale, gold gallery light, dialog fades, arrow shifts. No scroll reveals, parallax or clip-path entrances.
 - Scroll reveals were removed because they delayed LCP, blocked native lazy loading and caused ghosting.
 - Anchor navigation is instant; `prefers-reduced-motion` disables transitions/animations/smooth scrolling.
-- Fonts inlined as subset WOFF2 data URIs; critical CSS inlined; one deferred vanilla JS file; no framework hydration.
+- Fonts inlined as per-script subset WOFF2 data URIs; critical CSS inlined; one deferred vanilla JS file; no framework hydration.
 - Map is an image; film is click-to-load; no third-party requests.
 - Section `content-visibility` was removed because placeholder heights caused anchor/layout jumps at tablet widths.
 - Explicit image dimensions/aspect ratios prevent CLS.
-- The new locale pages reuse the same CSS, imagery and JS; they do not add network requests beyond the shared page assets.
+- The new locale pages reuse the same CSS, imagery and JS; they add no network requests beyond the shared page assets. The embedded CJK/Devanagari subsets make those HTML files heavier, but they are cached as part of the document.
 
 ### Accessibility-driven visual decisions
 
@@ -271,7 +275,7 @@ Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSit
 Every page carries a visible-to-machines timestamp in the head:
 
 ```html
-<meta name="lastmod" content="2026-11-21T11:39:00+01:00">
+<meta name="lastmod" content="2026-11-21T11:56:00+01:00">
 ```
 
 - It records the **publish time of the current push**, in ISO 8601 with the `Europe/Lisbon` offset.
@@ -298,7 +302,7 @@ Final **pre-noindex, pre-restructure** audit (Chrome 142, Lighthouse 13.6, mobil
 | CLS | 0 | 0.015 |
 | Speed Index | 1.1 s | — |
 
-The eleven-locale, folder-based version has **not** been re-audited. The new pages reuse the same CSS, images and JS, but CJK/Arabic font fallbacks and RTL layout can change text metrics. Re-run Lighthouse on at least `/`, `/fr/`, `/ar/`, `/ja/` and `/hi/` before launch. A fresh SEO run may flag `is-crawlable` because noindex is intentional.
+The eleven-locale, folder-based version has **not** been re-audited. The new pages reuse the same CSS, images and JS, but embedded CJK/Devanagari subsets and RTL layout change text metrics and document weight. Re-run Lighthouse on at least `/`, `/fr/`, `/ar/`, `/ja/` and `/hi/` before launch. A fresh SEO run may flag `is-crawlable` because noindex is intentional.
 
 Reproduce:
 
@@ -321,6 +325,7 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 - Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; poster; `palacio-belavista-en.vtt`.
 - Static OSM map; gold HTML pin; OSM attribution.
 - OG card `assets/img/og-image.jpg` (1200×630); PB monogram favicons.
+- Fonts are embedded as subsets; `FONT-LICENSES.md` records the Prata, Jost and Noto licences.
 - Original masters/build pipeline are outside this publishing repo.
 
 ## 10. Contact form
@@ -380,4 +385,4 @@ Default opens the visitor’s mail app to `enquiries@palaciobelavista.com`. Opti
 
 ## 13. Credits
 
-Photography/film from the palace archive. **Prata** (Cyreal) and **Jost** (Indestructible Type) under SIL OFL. Map data © OpenStreetMap contributors, ODbL. No third-party analytics/advertising/cookies/tracking. Website copy, photography and film remain property of Palacio Belavista; code not licensed for reuse without permission.
+Photography/film from the palace archive. **Prata** (Cyreal), **Jost** (Indestructible Type) and the **Noto** script families under SIL OFL; see `FONT-LICENSES.md`. Map data © OpenStreetMap contributors, ODbL. No third-party analytics/advertising/cookies/tracking. Website copy, photography and film remain property of Palacio Belavista; code not licensed for reuse without permission.
