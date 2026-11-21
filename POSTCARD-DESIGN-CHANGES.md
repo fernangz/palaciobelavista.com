@@ -2,7 +2,7 @@
 
 Reference: the supplied postcard artwork in `postcard/` (front and back). The artwork is a design reference, not a page asset.
 
-**Status: implemented across all eleven locales.** The window mark, cream postcard panels, serif body copy, brass rules, two-line wordmark, sale wording and dark gallery/footer contrast are live. `/?play` is implemented. Property facts were updated from dossier v04: 1,036.68 m² reported area, 488.49 m² plot, 25 rooms, 12 bedrooms, 1783, garden and two terraces, price upon request; the bathroom schedule and floor count remain unconfirmed. The postcard’s “Palacete” will be corrected by the designer to “Palacio”.
+**Status: implemented across all eleven locales.** The window mark, cream postcard panels, serif body copy, brass rules, two-line wordmark, sale wording and dark gallery/footer contrast are live. `/?play` is implemented. Property facts were updated from dossier v04: 1,036.68 m² reported area, 488.49 m² plot, 25 rooms, 12 bedrooms, 1783, garden and two terraces, price upon request; the bathroom schedule and floor count remain unconfirmed. The video poster is now a 1:1 entrance-hall crop with a cream-and-brass play plaque. The postcard’s “Palacete” will be corrected by the designer to “Palacio”.
 
 The current typefaces stay: **Noto Serif** and **Noto Sans**. The postcard’s serif is more high-contrast than Noto Serif, so the match is achieved through case, size, tracking, rules and layout rather than a new typeface.
 
@@ -129,7 +129,7 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
 - Current: dark full-bleed section, huge Noto Serif H1, portrait poster.
 - Change to a **postcard cover panel**:
   - cream page/mount;
-  - large framed film poster or facade photograph on one side;
+  - 1:1 entrance-hall film poster on one side;
   - cream text panel on the other;
   - window mark, two-line wordmark, `LISBON · PORTUGAL`, rule;
   - italic promise: “History. Beauty. A home like no other.”;

@@ -22,7 +22,7 @@
 <link rel="alternate" hreflang="ja" href="https://fernangz.github.io/palaciobelavista.com/ja/">
 <link rel="alternate" hreflang="it" href="https://fernangz.github.io/palaciobelavista.com/it/">
 <link rel="alternate" hreflang="x-default" href="https://fernangz.github.io/palaciobelavista.com/">
-<meta name="lastmod" content="2026-11-21T13:30:00+01:00">
+<meta name="lastmod" content="2026-11-21T13:35:00+01:00">
 <meta name="theme-color" content="#1b1a17">
 <meta name="format-detection" content="telephone=no">
 <meta name="geo.region" content="PT-11">
@@ -120,9 +120,17 @@ body{font-family:var(--serif);font-weight:400;background:var(--paper);color:var(
 .film__copy .postcard-promise{font-family:var(--serif);font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.35;color:var(--ink);margin:0 0 .55rem}
 .film__copy .postcard-sale{font-family:var(--serif);font-size:1.1rem;color:var(--text);margin:0 0 1.2rem}
 .film__meta{color:var(--gold-deep)}
-.film__poster{border-color:var(--line);background:var(--paper);padding:.45rem}
+.film__poster{width:min(100%,30rem);border-color:var(--line);background:var(--paper);padding:.45rem}
+.film__poster img{aspect-ratio:1 / 1}
 .film__poster:after{display:none}
-.film__poster:hover .film__play{background:var(--ink);color:var(--paper)}
+.film__play{top:auto;left:1rem;bottom:1rem;display:flex;width:auto;height:auto;gap:.8rem;align-items:center;padding:.5rem .85rem .5rem .5rem;border:1px solid rgba(27,26,23,.2);border-radius:0;background:rgba(252,243,228,.94);color:var(--ink);box-shadow:0 8px 28px rgba(0,0,0,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transform:none;z-index:3}
+.film__play-icon{display:grid;place-items:center;width:2.7rem;height:2.7rem;border:1px solid var(--gold-deep);border-radius:50%;color:var(--gold-deep)}
+.film__play-icon svg{width:.9rem;height:.9rem;margin-left:.15rem}
+.film__play-label{font-family:var(--sans);font-size:1rem;letter-spacing:.12em;line-height:1;text-transform:uppercase}
+.film__play-arrow{font-family:var(--sans);font-size:1.1rem;line-height:1;color:var(--gold-deep);transition:transform .35s var(--ease)}
+.film__poster:hover .film__play{background:var(--ink);color:var(--paper);border-color:var(--ink);transform:none}
+.film__poster:hover .film__play-icon{border-color:var(--gold-2);color:var(--gold-2)}
+.film__poster:hover .film__play-arrow{color:var(--gold-2);transform:translate(3px,-3px)}
 .postcard-mark{display:block;width:clamp(3.2rem,6vw,4.6rem);height:auto;margin-bottom:1rem;color:var(--ink)}
 .postcard-mark svg,.footer__mark svg{display:block;width:100%;height:auto}
 html[lang="hi"] .postcard-location,html[lang="hi"] .eyebrow{letter-spacing:normal}
@@ -181,7 +189,7 @@ html[lang="hi"] .postcard-location,html[lang="hi"] .eyebrow{letter-spacing:norma
 .footer__wordmark{max-width:none;font-size:clamp(2.8rem,8vw,6.5rem);line-height:.9;letter-spacing:.05em;text-transform:uppercase}
 .footer__wordmark em{font-style:normal;color:var(--gold-2)}
 @media(min-width:48rem){.characteristics__grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(2rem,6vw,5rem)}}
-@media(max-width:47.99rem){.film__copy{order:1}.film__grid>div:last-child{order:2}.enquire__grid{grid-template-columns:1fr}.film .shell{padding:1.1rem}.characteristics__item{padding:1rem 0}}
+@media(max-width:47.99rem){.film__copy{order:2}.film__grid>div:last-child{order:1}.enquire__grid{grid-template-columns:1fr}.film .shell{padding:1.1rem}.characteristics__item{padding:1rem 0}}
 </style>
 <noscript><style>.reveal,.reveal-img,.gallery__item{opacity:1!important;transform:none!important;clip-path:none!important}.site-header{background:rgba(252,243,228,.96);color:#1b1a17;border-bottom:1px solid rgba(27,26,23,.15)}.site-header::before{opacity:0}.menu-toggle{display:none}</style></noscript>
 <style>
@@ -288,14 +296,15 @@ html[dir="rtl"] .form__hp{left:auto;right:0;top:0;clip-path:inset(50%);overflow:
       <div class="reveal reveal-delay-1">
         <button class="film__poster" type="button" data-film-open aria-label="شاهد الفيلم: جولة في Palacio Bela Vista، 42 ثانية، بالصوت">
           <picture>
-  <source type="image/avif" srcset="../assets/video/poster-720.avif">
-  <source type="image/webp" srcset="../assets/video/poster-720.webp">
-  <img src="../assets/video/poster-720.jpg" width="720" height="1272" alt="نافذة منزلقة مفتوحة في Palacio Bela Vista، تطل على الحديقة نحو نهر تاجة." loading="lazy" decoding="async">
+  <source type="image/avif" srcset="../assets/video/poster-square-1000.avif">
+  <source type="image/webp" srcset="../assets/video/poster-square-1000.webp">
+  <img src="../assets/video/poster-square-1000.jpg" width="1000" height="1000" alt="بهو الدخول في Palacio Bela Vista بأرضية رخامية سوداء وبيضاء بترصيف ماسي، وأبواب مزدوجة منحوتة، وكراسي حمراء، وفانوس زجاجي مطلي بالذهب." loading="lazy" decoding="async">
 </picture>
           <span class="film__play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5 18.5 12 8 18.5V5.5Z" fill="currentColor"/></svg>
+            <span class="film__play-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5.5 18.5 12 8 18.5V5.5Z" fill="currentColor"/></svg></span>
+            <span class="film__play-label">شاهد الفيلم</span>
+            <span class="film__play-arrow" aria-hidden="true">↗</span>
           </span>
-          <span class="film__label">شاهد الفيلم</span>
         </button>
       </div>
     </div>

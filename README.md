@@ -165,7 +165,7 @@ The page is ordered for a real-estate reader rather than an editorial one:
 
 **Header → Video → Gallery → Property identity → Characteristics → Craft → FAQs → Contact → Footer.**
 
-- **Video** opens with a postcard cover panel: framed portrait film poster beside a cream text panel with the window mark, two-line wordmark, location, promise, sale line and a click-to-load play control.
+- **Video** opens with a postcard cover panel: framed 1:1 entrance-hall film poster beside a cream text panel with the window mark, two-line wordmark, location, promise, sale line and an editorial play plaque.
 - **Gallery** follows immediately: 25 photographs, filters and lightbox.
 - **Property identity** gives the address, coordinates, property type and the static area map.
 - **Characteristics** is a ten-field grid: reported area, reported plot area, rooms, bedrooms, bathrooms, build year, construction materials, structural features, outdoor spaces and sustainability status. The reported figures are 1,036.68 m², 488.49 m², 25 rooms, 12 bedrooms and 1783, with a garden and two terraces. Bathroom schedule and floor count remain to be confirmed; the grid carries that caveat.
@@ -186,7 +186,7 @@ The page is ordered for a real-estate reader rather than an editorial one:
 
 ### Video, property identity and map
 
-- Video is the first content section: a framed portrait poster with a circular play control, never autoplaying; it opens a native-control dialog with captions. Runtime 42 seconds.
+- Video is the first content section: a 1:1 entrance-hall poster with a cream-and-brass play plaque, never autoplaying; it opens a native-control dialog with captions. Runtime 42 seconds.
 - Property identity combines the address, coordinates, property type, asking price (upon request) and a **static OSM image**, not an iframe: no cookies, no third-party JS, desaturated basemap, brass HTML pin and visible OSM attribution. Google Maps removed.
 - The architecture plan drawing is no longer a separate section; the essential structural facts are carried in Characteristics and Craft.
 
@@ -335,7 +335,7 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 
 - 25 gallery photographs in AVIF/WebP/JPEG at multiple widths; responsive gallery and property sets.
 - Watermarked sources cleaned by quiet-area seam-crop/blend; originals left outside this repo.
-- Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; poster; `palacio-belavista-en.vtt`.
+- Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; 1:1 entrance-hall poster in AVIF/WebP/JPEG; `palacio-belavista-en.vtt`.
 - Static OSM map; brass HTML pin; OSM attribution.
 - OG card `assets/img/og-image.jpg` (1200×630) in the postcard system; window-mark favicons and PWA icons.
 - Fonts are embedded as subsets; `FONT-LICENSES.md` records the Noto licences.
@@ -402,6 +402,7 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 29. Implemented the postcard design system: window mark, cream split panels, serif body copy, brass rules, two-line wordmark, “Private residence available to purchase”, and a dark gallery/footer contrast.
 30. Added the `/?play` postcard QR deep link and regenerated the OG card and favicons in the postcard system.
 31. Updated the property facts from dossier v04: 1,036.68 m² reported area, 488.49 m² plot, 25 rooms, 12 bedrooms, 1783, garden and two terraces, price upon request; documented the unconfirmed bathroom schedule and floor count.
+32. Replaced the portrait video poster with a 1:1 entrance-hall crop and redesigned the play control as a cream-and-brass editorial plaque; on mobile the poster now leads the cover.
 
 ## 13. Credits
 
