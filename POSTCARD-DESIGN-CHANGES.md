@@ -117,12 +117,12 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
 
 - Current: PB box, small left wordmark, four links, transparent over dark video.
 - Change:
-  - light cream header over the cream page, or transparent over a cream opening panel;
+  - permanent cream header over the cream page;
   - window mark + compact wordmark at left;
   - four quiet text links;
   - `CONTACT` as an outlined rectangle, not a filled button;
-  - thin bottom rule only when scrolled.
-- The cream opening panel replaces the old dark frosted-glass state; the header stays cream with ink text and a hairline on scroll.
+  - permanent hairline rule and compact 4.5rem height; no scroll state.
+- The cream opening panel replaces the old dark frosted-glass state; the header is cream from first paint with ink text and a permanent hairline, so it never changes form on scroll.
 
 ### 4.2 Opening video section
 

@@ -153,7 +153,7 @@ The supplied postcard is now the site’s visual system: cream stock, split phot
 
 ### Header and menu
 
-- Header is cream over the postcard cover; after 48px it becomes near-opaque cream with a hairline rule, ink text and the window mark.
+- Header is permanently cream with ink text, a hairline rule, 14px blur and the window mark. It keeps a compact 4.5rem height from first paint; there is no scroll-driven resize or colour change.
 - Fixed header is shallow; a scroll-padding offset keeps anchors clear; state restores on reload/direct anchors.
 - Desktop nav is four quiet links — Video, Gallery, Property, Contact. Characteristics, Craft, FAQs and Contact are available in the full-screen menu.
 - Mobile uses a two-line toggle and full-screen dialog, not a cramped drawer.
@@ -212,7 +212,7 @@ The page is ordered for a real-estate reader rather than an editorial one:
 ### Accessibility-driven visual decisions
 
 - The 16px floor changed the scale: labels, captions and nav are larger and the layout was re-spaced around them.
-- Header became cream over the postcard cover, with ink text and a hairline on scroll, so it belongs to the same paper system as the page.
+- Header is permanently cream with ink text and a hairline, so it belongs to the same paper system as the page and never changes form on scroll.
 - Language switchers moved out of the header so 16px labels would not crowd primary navigation.
 - Footer reflows earlier; German compounds hyphenate; long email addresses wrap safely.
 - Icon-only controls have accessible names; text controls stay text; brass is darkened to brass-deep on light paper.
@@ -238,7 +238,7 @@ The site targets **WCAG 2.2 AA** and was audited with Lighthouse plus manual che
 - **No text below 1rem/16px.** FAQ questions are larger; answers are `1.0625rem`.
 - Body copy has generous line-height and readable measures.
 - German compounds use `hyphens: auto`; footer headings are non-breaking; overflow checked at all listed widths in the Latin locales.
-- Header: cream over the postcard cover, ink text and a hairline on scroll; 18px blur.
+- Header: permanent cream, ink text and a hairline; 14px blur; fixed 4.5rem height.
 - `:focus-visible`: 2px brass outline, 4px offset. Skip link moves focus to `main`.
 - Minimum **44px** targets for nav, buttons, language and footer links.
 - Native `<dialog>` menu with `showModal()`, Escape, backdrop click, focus restoration.
@@ -382,7 +382,7 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 9. Form: accessible fields, consent, honeypot, mailto fallback/static endpoint (later removed in favour of the dossier mailto).
 10. SEO: canonical, OG/Twitter, JSON-LD, image metadata, hreflang, sitemap.
 11. Accessibility: 16px floor, contrast, 44px targets, skip link, focus, landmarks, keyboard dialogs, reduced motion.
-12. Header: cream over the postcard cover; hairline cream on scroll.
+12. Header: permanent cream over the postcard cover; hairline rule; fixed compact height.
 13. Added French, Portuguese, Spanish, German and Italian with localized metadata/JSON-LD/switchers.
 14. Responsive fixes: tablet footer, German hyphenation, no overflow, localized counts/hints.
 15. Performance: inline fonts, optimized images, deferred JS, static map, no third-party; Lighthouse 100s.
@@ -403,6 +403,7 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 30. Added the `/?play` postcard QR deep link and regenerated the OG card and favicons in the postcard system.
 31. Updated the property facts from dossier v04: 1,036.68 m² reported area, 488.49 m² plot, 25 rooms, 12 bedrooms, 1783, garden and two terraces, price upon request; documented the unconfirmed bathroom schedule and floor count.
 32. Replaced the portrait video poster with a 1:1 entrance-hall crop and redesigned the play control as a cream-and-brass editorial plaque; on mobile the poster now leads the cover.
+33. Removed the scroll-driven header state so the navigation and menu control keep the same height and treatment from first paint.
 
 ## 13. Credits
 
