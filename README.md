@@ -217,6 +217,7 @@ The page is ordered for a real-estate reader rather than an editorial one:
 - Language switchers moved out of the header so 16px labels would not crowd primary navigation.
 - Footer reflows earlier; German compounds hyphenate; long email addresses wrap safely.
 - Icon-only controls have accessible names; text controls stay text; brass is darkened to brass-deep on light paper.
+- Body copy, headings and contact text remain selectable; media, navigation, buttons and UI labels use `user-select:none`. Links and buttons use `pointer`, gallery images use `zoom-in`, disabled controls use `not-allowed`, and body text keeps the normal text cursor.
 - New locales translate `alt`, `aria-label`, lightbox titles/captions, gallery category labels, contact copy and the film close controls.
 - Arabic keeps native RTL reading order; focus order follows the DOM.
 
@@ -406,6 +407,7 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 31. Updated the property facts from dossier v04: 1,036.68 m² reported area, 488.49 m² plot, 25 rooms, 12 bedrooms, 1783, garden and two terraces, price upon request; documented the unconfirmed bathroom schedule and floor count.
 32. Replaced the portrait video poster with a 1:1 entrance-hall crop and redesigned the play control as a cream-and-brass editorial plaque; on mobile the poster now leads the cover.
 33. Removed the scroll-driven header state so the navigation and menu control keep the same height and treatment from first paint.
+34. Added a selection and cursor policy: UI chrome/media are non-selectable, body copy stays selectable, and interactive elements carry pointer, zoom-in or disabled cursors.
 
 ## 13. Credits
 

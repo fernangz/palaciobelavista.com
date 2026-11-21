@@ -22,7 +22,7 @@
 <link rel="alternate" hreflang="ja" href="https://fernangz.github.io/palaciobelavista.com/ja/">
 <link rel="alternate" hreflang="it" href="https://fernangz.github.io/palaciobelavista.com/it/">
 <link rel="alternate" hreflang="x-default" href="https://fernangz.github.io/palaciobelavista.com/">
-<meta name="lastmod" content="2026-11-21T13:38:00+01:00">
+<meta name="lastmod" content="2026-11-21T14:01:00+01:00">
 <meta name="theme-color" content="#1b1a17">
 <meta name="format-detection" content="telephone=no">
 <meta name="geo.region" content="PT-11">
@@ -191,6 +191,30 @@ html[lang="hi"] .postcard-location,html[lang="hi"] .eyebrow{letter-spacing:norma
 .footer__wordmark em{font-style:normal;color:var(--gold-2)}
 @media(min-width:48rem){.characteristics__grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(2rem,6vw,5rem)}}
 @media(max-width:47.99rem){.film__copy{order:2}.film__grid>div:last-child{order:1}.enquire__grid{grid-template-columns:1fr}.film .shell{padding:1.1rem}.characteristics__item{padding:1rem 0}}
+
+/* selection and cursor policy */
+img,picture,video,svg,canvas,iframe,
+button,.btn,.skip-link,
+.site-header,.menu,
+.gallery__bar,.gallery__button,
+.film__poster,.film__play,
+.lightbox__nav,.lightbox__close,.film-modal__close,
+.footer__nav,.langs,.footer__bottom,
+.eyebrow,.film__meta,.postcard-location,
+.gallery__num,.gallery__count,.gallery__cat,
+.map__details dt,.map__figure figcaption,
+.characteristics__item dt,.craft__item figcaption{
+  -webkit-user-select:none;
+  user-select:none;
+}
+img{-webkit-user-drag:none}
+input,textarea,select,[contenteditable="true"]{
+  -webkit-user-select:text;
+  user-select:text;
+}
+a[href],button,summary,[role="button"]{cursor:pointer}
+button:disabled,[aria-disabled="true"]{cursor:not-allowed}
+select{cursor:pointer}
 </style>
 <noscript><style>.reveal,.reveal-img,.gallery__item{opacity:1!important;transform:none!important;clip-path:none!important}.site-header{background:rgba(252,243,228,.96);color:#1b1a17;border-bottom:1px solid rgba(27,26,23,.15)}.site-header::before{opacity:0}.menu-toggle{display:none}</style></noscript>
 </head>
