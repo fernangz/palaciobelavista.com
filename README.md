@@ -282,7 +282,7 @@ Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSit
 Every page carries a visible-to-machines timestamp in the head:
 
 ```html
-<meta name="lastmod" content="2026-11-21T12:36:00+01:00">
+<meta name="lastmod" content="2026-11-21T12:40:00+01:00">
 ```
 
 - It records the **publish time of the current push**, in ISO 8601 with the `Europe/Lisbon` offset.
@@ -333,6 +333,7 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 - Static OSM map; gold HTML pin; OSM attribution.
 - OG card `assets/img/og-image.jpg` (1200×630); PB monogram favicons.
 - Fonts are embedded as subsets; `FONT-LICENSES.md` records the Noto licences.
+- Unused wide hero image variants and the duplicate `favicon-48.png` were removed after the page restructure; the remaining asset set is fully referenced.
 - Original masters/build pipeline are outside this publishing repo.
 
 ## 10. Contact and dossier
@@ -391,6 +392,7 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 25. Added `<meta name="lastmod">` to every page and documented the GitHub Pages propagation window and eventual custom-domain migration.
 26. Switched the whole site to Noto Serif + Noto Sans, with script-specific Noto faces and regenerated subsets for all eleven locales and the OG card.
 27. Restructured every locale into Header → Video → Gallery → Property identity → Characteristics → Craft → FAQs → Contact → Footer; removed the form and added the localized full-dossier mailto.
+28. Removed unused wide hero image variants and `favicon-48.png`, and rechecked every remaining asset against the published references.
 
 ## 13. Credits
 
