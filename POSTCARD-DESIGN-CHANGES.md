@@ -219,16 +219,17 @@ Keep the existing `--gold` tokens only if a warmer accent is still needed; the p
 
 ## 6. P1 — `/?play` video deep link
 
-The postcard QR points to `https://palaciobelavista.com/?play`. The website needs a dedicated deep-link behaviour:
+**Implemented.** The postcard QR points to `https://palaciobelavista.com/?play`. The website now:
 
-- On load, if `play` is present in the query string, open the existing film dialog.
-- Attempt to start the film automatically.
-- Browsers block audible autoplay without a gesture; if `play()` is rejected, leave the native player visible with the play control focused. Do not silently fail.
-- Do not autoplay on a normal visit. `/?play` is the only trigger.
-- Keep the same behaviour on the provisional GitHub Pages URL for testing: `https://fernangz.github.io/palaciobelavista.com/?play`.
-- The final QR code must be generated only after the domain is live, so it encodes the final URL.
-- The postcard must print `palaciobelavista.com/?play` next to the QR.
-- If the visitor changes language after landing, the film dialog and controls should stay in the selected locale.
+- detects the `play` query parameter on load;
+- opens the existing film dialog;
+- attempts unmuted playback first;
+- if the browser blocks audible autoplay, retries muted so the film still starts; the native controls let the viewer restore sound;
+- leaves normal visits untouched (no autoplay without `?play`);
+- works on the English root and localized pages;
+- works on the provisional GitHub Pages URL for testing: `https://fernangz.github.io/palaciobelavista.com/?play`.
+
+The final QR code must be generated only after the domain is live, so it encodes the final URL. The postcard must print `palaciobelavista.com/?play` next to the QR.
 
 ## 7. P2 — Assets and finishing
 
@@ -256,7 +257,7 @@ The postcard QR points to `https://palaciobelavista.com/?play`. The website need
 2. **Header, wordmark and opening video panel** (1 day).
 3. **Gallery, property identity and characteristics** (1–1.5 days).
 4. **Craft, FAQ, contact and footer** (1 day).
-5. **OG card, favicons, QR/`?play` link and translations** (0.5–1 day).
+5. **OG card, favicons, QR link and translations** (0.5–1 day; `/?play` already implemented).
 6. **Responsive/RTL/accessibility QA** (1 day).
 
 Rough total: **4–6 working days**, excluding photography retouching and native-speaker review.

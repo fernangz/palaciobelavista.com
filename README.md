@@ -64,7 +64,7 @@ POSTCARD-DESIGN-CHANGES.md
 
 ### Postcard design reference
 
-The supplied postcard artwork is the reference for the next visual pass. The gap analysis and section-by-section changes are documented in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). Resolved: the name stays **Palacio Bela Vista**; the window mark becomes the primary logo; the gallery stays dark; the sale wording is **“Private residence available to purchase”**; the postcard QR points to `/?play`; there is no downloadable postcard. The current typefaces remain Noto Serif and Noto Sans.
+The supplied postcard artwork is the reference for the next visual pass. The gap analysis and section-by-section changes are documented in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). Resolved: the name stays **Palacio Bela Vista**; the window mark becomes the primary logo; the gallery stays dark; the sale wording is **“Private residence available to purchase”**; the postcard QR points to `/?play`; there is no downloadable postcard. The `/?play` video deep link is implemented; the visual postcard redesign is not yet implemented. The current typefaces remain Noto Serif and Noto Sans.
 
 ### Direction
 
@@ -287,7 +287,7 @@ Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSit
 Every page carries a visible-to-machines timestamp in the head:
 
 ```html
-<meta name="lastmod" content="2026-11-21T12:40:00+01:00">
+<meta name="lastmod" content="2026-11-21T12:54:00+01:00">
 ```
 
 - It records the **publish time of the current push**, in ISO 8601 with the `Europe/Lisbon` offset.
