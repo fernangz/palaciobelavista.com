@@ -338,8 +338,8 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 
 ## 9. Assets
 
-- 25 gallery photographs in AVIF/WebP/JPEG at multiple widths; responsive gallery sets.
-- Watermarked sources cleaned by quiet-area seam-crop/blend; originals left outside this repo.
+- 25 gallery photographs in AVIF/WebP/JPEG at multiple widths, regenerated from the clean sources supplied in `assets/pictures/` (source folder kept out of the published repo). The garden-walk image was already clean and has no matching source file, so it was retained.
+- Original clean source photography lives in `assets/pictures/` and is kept out of the published repo; only the responsive derivatives are committed.
 - Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; 1:1 entrance-hall poster in AVIF/WebP/JPEG; `palacio-belavista-en.vtt`.
 - Static OSM-derived antique area map in JPEG at three widths; no pin; OSM attribution.
 - OG card `assets/img/og-image.jpg` (1200×630) in the postcard system with the supplied emblem; favicon, Apple touch and PWA icons derived from the same emblem.
@@ -413,6 +413,7 @@ There is no contact form and no visible email address. The contact section gives
 34. Added a selection and cursor policy: UI chrome/media are non-selectable, body copy stays selectable, and interactive elements carry pointer, zoom-in or disabled cursors.
 35. Applied the confirmed review: Video → Gallery → Overview → Contact; removed Property, Craft and FAQ; removed gallery filters/count; replaced the mark with the supplied SVG emblem; moved the map to Contact as an antique area view without a pin; removed visible email, coordinates and price; switched mailto to `palaciobelavista@gmail.com`; simplified the footer and kept all eleven languages.
 36. Reduced the header/menu emblem, enlarged the cover emblem, and regenerated the favicon, Apple touch and PWA icons from the supplied SVG.
+37. Replaced the gallery, poster and OG photography with derivatives made from the clean watermark-free sources in `assets/pictures/`; kept the original sources outside the published repo.
 
 ## 13. Credits
 

@@ -7,3 +7,6 @@ dossier/
 
 # Source inputs and artwork stay outside the published site
 input/
+
+# Clean source photography (derivatives only are published)
+assets/pictures/
