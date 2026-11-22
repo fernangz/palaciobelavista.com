@@ -198,7 +198,7 @@ The page is ordered for a real-estate reader rather than an editorial one:
 
 - **No contact form.** The contact section gives the email address and a single **Request the full dossier** button.
 - The button is a `mailto:` link with a prefilled, localized subject and body asking for more information about the property and the full dossier.
-- Footer: dark ink, supplied emblem, uppercase two-line Noto Serif wordmark with brass “Bela Vista”, a minimal copyright line, Back to Top and the eleven-language selector. The old Visit/Discover/Contact columns and descriptive/contact texts are removed.
+- Footer: dark ink, supplied emblem, uppercase two-line Noto Serif wordmark with brass “Bela Vista”, a minimal copyright line with a privacy-request link, Back to Top and the eleven-language selector. The old Visit/Discover/Contact columns and descriptive/contact texts are removed.
 - Language switcher in footer and menu, not header: visible two-letter codes, native-language accessible names, active brass rule. It lists eleven languages in speaker order.
 - Back-to-top is a plain text arrow link, not a floating button.
 

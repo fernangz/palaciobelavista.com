@@ -135,7 +135,7 @@ The current map asset is an OpenStreetMap street plan, not a satellite/aerial ph
 - Remove the descriptive statement.
 - Remove the **VISIT / DISCOVER / CONTACT** columns.
 - Remove the footer contact block and visible email.
-- Remove the photography text and old columns; keep a minimal copyright line.
+- Remove the photography text and old columns; keep a minimal copyright line and a privacy-request link.
 - Keep the full language list.
 - Keep **BACK TO TOP** and verify it returns to the top.
 
@@ -167,5 +167,5 @@ The current map asset is an OpenStreetMap street plan, not a satellite/aerial ph
 ## 11. Implementation notes
 
 1. The contact map uses a pre-styled antique version of the existing OSM plan, with no pin. It is an area view, not satellite photography.
-2. The footer keeps a minimal copyright line and all eleven languages; no privacy policy page exists yet.
+2. The footer keeps a minimal copyright line with a privacy-request mailto and all eleven languages. No separate privacy policy page exists yet.
 3. “Video: no changes” was applied to `/?play` behaviour; the review’s video copy removals were applied.
