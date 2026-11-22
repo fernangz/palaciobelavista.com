@@ -342,7 +342,7 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 - Watermarked sources cleaned by quiet-area seam-crop/blend; originals left outside this repo.
 - Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; 1:1 entrance-hall poster in AVIF/WebP/JPEG; `palacio-belavista-en.vtt`.
 - Static OSM-derived antique area map in JPEG at three widths; no pin; OSM attribution.
-- OG card `assets/img/og-image.jpg` (1200×630) in the postcard system with the supplied emblem; simplified favicons and PWA icons.
+- OG card `assets/img/og-image.jpg` (1200×630) in the postcard system with the supplied emblem; favicon, Apple touch and PWA icons derived from the same emblem.
 - Postcard QR `qr/palacio-belavista-play-qr.svg` (1200×1200 SVG, cream/ink/brass) pointing to `https://palaciobelavista.com/?play`.
 - Fonts are embedded as subsets; `FONT-LICENSES.md` records the Noto licences.
 - Unused wide hero image variants and the duplicate `favicon-48.png` were removed after the page restructure; the remaining asset set is fully referenced. The supplied postcard artwork stays outside the published assets.
@@ -412,6 +412,7 @@ There is no contact form and no visible email address. The contact section gives
 33. Removed the scroll-driven header state so the navigation and menu control keep the same height and treatment from first paint.
 34. Added a selection and cursor policy: UI chrome/media are non-selectable, body copy stays selectable, and interactive elements carry pointer, zoom-in or disabled cursors.
 35. Applied the confirmed review: Video → Gallery → Overview → Contact; removed Property, Craft and FAQ; removed gallery filters/count; replaced the mark with the supplied SVG emblem; moved the map to Contact as an antique area view without a pin; removed visible email, coordinates and price; switched mailto to `palaciobelavista@gmail.com`; simplified the footer and kept all eleven languages.
+36. Reduced the header/menu emblem, enlarged the cover emblem, and regenerated the favicon, Apple touch and PWA icons from the supplied SVG.
 
 ## 13. Credits
 
