@@ -4,3 +4,6 @@
 # Source artwork and dossiers stay outside the published site
 postcard/
 dossier/
+
+# Source inputs and artwork stay outside the published site
+input/

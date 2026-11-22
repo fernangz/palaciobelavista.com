@@ -5,7 +5,7 @@ Static website for **Palacio Bela Vista**, a Pombaline palace at **Rua do Ataíd
 - **Live for now:** https://fernangz.github.io/palaciobelavista.com/
 - **Repository:** https://github.com/fernangz/palaciobelavista.com
 - **Final domain (pending):** https://palaciobelavista.com
-- **Enquiries:** enquiries@palaciobelavista.com
+- **Enquiries:** palaciobelavista@gmail.com (mailto links only)
 
 > The public name is **Palacio Bela Vista** (two words). The domain, repository and email address keep the compact `palaciobelavista.com` form; the video and VTT filenames also keep the hyphenated form.
 
@@ -15,7 +15,7 @@ Static website for **Palacio Bela Vista**, a Pombaline palace at **Rua do Ataíd
 
 ## 1. Project overview
 
-A private Pombaline residence in Lisbon, presented through film, a 25-image gallery, property identity, characteristics and architectural craft, with a direct full-dossier request.
+A private Pombaline residence in Lisbon, presented through film, a 25-image gallery, an Overview of the property and a direct full-dossier request.
 
 | Field | Value |
 | --- | --- |
@@ -25,7 +25,7 @@ A private Pombaline residence in Lisbon, presented through film, a 25-image gall
 | City / parish | Lisboa / Misericórdia |
 | Country | Portugal |
 | Coordinates | 38.7086386, -9.1443863 |
-| Email | enquiries@palaciobelavista.com |
+| Email | palaciobelavista@gmail.com (mailto only) |
 
 The Google Maps link was removed. Location links point to OpenStreetMap; the map is a static, cookie-free image with OSM attribution.
 
@@ -63,16 +63,20 @@ POSTCARD-DESIGN-CHANGES.md
 
 ## 3. Design decisions
 
+### Client corrections
+
+The 21 November 2026 French review document and the confirmed decisions are recorded in [CORRECTIONS-TO-APPLY.md](CORRECTIONS-TO-APPLY.md). No corrections have been applied yet.
+
 ### Postcard design reference
 
-The supplied postcard is now the site’s visual system: cream stock, split photo/text panels, the line-art window mark, a two-line uppercase wordmark, thin brass rules, serif body copy and deep-ink gallery/footer contrast. The gap analysis and implementation record are in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). Resolved: the name stays **Palacio Bela Vista**; the window mark is the primary logo; the gallery stays dark; the sale wording is **“Private residence available to purchase”**; the postcard QR points to `/?play`; there is no downloadable postcard. The typefaces remain Noto Serif and Noto Sans.
+The supplied postcard is now the site’s visual system: cream stock, split photo/text panels, the supplied engraved emblem, a two-line uppercase wordmark, thin brass rules, serif body copy and deep-ink gallery/footer contrast. The gap analysis and implementation record are in [POSTCARD-DESIGN-CHANGES.md](POSTCARD-DESIGN-CHANGES.md). Resolved: the name stays **Palacio Bela Vista**; the supplied engraved emblem is the primary logo; the gallery stays dark; the sale wording is **“Private residence available to purchase”**; the postcard QR points to `/?play`; there is no downloadable postcard. The typefaces remain Noto Serif and Noto Sans.
 
 ### Direction
 
 - **Private residence, not a hotel or estate listing.** No price panels, badges, stock photography or glossy marketing cards; the house is the subject.
 - **Editorial, quiet, confident.** Generous cream space, thin brass rules, muted colour, a few strong typographic moments. Brass is an accent, never a wash.
 - **One atmosphere, changing temperature.** Cream postcard panels for reading, a dark gallery for photographic contrast, and a dark footer as the closing block.
-- **Craft in the interface.** Precise spacing, letter-spaced labels, fine borders and the postcard’s open-window mark instead of generic UI chrome.
+- **Craft in the interface.** Precise spacing, letter-spaced labels, fine borders and the supplied engraved emblem instead of generic UI chrome.
 
 ### Typography
 
@@ -87,7 +91,7 @@ The supplied postcard is now the site’s visual system: cream stock, split phot
 - Postcard H1: `clamp(2.4rem, 4.4vw, 4rem)`, forced to two lines; section H2s use fluid clamps, with property/characteristics capped at 4.4rem so long translations fit at 320px.
 - Body: `1.0625rem` mobile, `1.09rem` desktop, 1.7 line-height.
 - **Every label, caption, nav item and footer line has a 1rem/16px floor.**
-- FAQ questions are `clamp(1.25rem, 2.2vw, 1.7rem)`; answers are `1.0625rem`.
+- Overview labels and contact metadata use the 1rem floor; values use the serif body size.
 - Italic lines carry the emotional register: “History. Beauty. A home like no other.” and “Discover the residence.”
 - Menu/gallery numerals use tracked Noto Sans as editorial folios, not UI counters.
 - **Script coverage:** Noto Serif and Noto Sans carry Latin and Cyrillic, so Russian uses the same serif/sans pairing as the Latin pages, with Cyrillic glyphs included in the embedded subsets.
@@ -137,7 +141,7 @@ The supplied postcard is now the site’s visual system: cream stock, split phot
 
 | Breakpoint | Changes |
 | --- | --- |
-| `< 22rem` | Wordmark hidden; window mark remains |
+| `< 22rem` | Wordmark hidden; emblem remains |
 | `36rem` | Characteristics 2 columns; gallery 2 columns; facts 3 columns |
 | `48rem` | Editorial grids; chapter layouts; 2-column footer |
 | `68rem` | Full desktop nav + header CTA; gallery 3 columns |
@@ -149,31 +153,30 @@ The supplied postcard is now the site’s visual system: cream stock, split phot
 - Buttons use `0.12em` tracking at 16px to avoid unnecessary wrapping.
 - German compounds hyphenate; footer headings are non-breaking.
 - No horizontal overflow at 320, 360, 390, 412, 768, 960, 1024, 1280 or 1440px in the Latin locales.
-- Arabic is RTL: the page sets `dir="rtl"`, mirrors flex/margin direction, flips the gallery filter fade, select arrow, lightbox arrows, film label and decorative PB watermark, and disables letter-spacing for connected Arabic script. Arabic line-height is increased to 1.95.
+- Arabic is RTL: the page sets `dir="rtl"`, mirrors flex/margin direction, flips the select arrow, lightbox arrows and film label, and disables letter-spacing for connected Arabic script. Arabic line-height is increased to 1.95.
 - CJK and Devanagari body line-height is increased to 1.85–1.9 for readability.
 
 ### Header and menu
 
-- Header is permanently cream with ink text, a hairline rule, 14px blur and the window mark. It keeps a compact 4.5rem height from first paint; there is no scroll-driven resize or colour change.
+- Header is permanently cream with ink text, a hairline rule, 14px blur and the supplied emblem. It keeps a compact 4.5rem height from first paint; there is no scroll-driven resize or colour change.
 - Fixed header is shallow; a scroll-padding offset keeps anchors clear; state restores on reload/direct anchors.
-- Desktop nav is four quiet links — Video, Gallery, Property, Contact. Characteristics, Craft, FAQs and Contact are available in the full-screen menu.
+- Desktop nav is three quiet links — Video, Gallery, Overview — plus the outlined Contact button. Contact is also available in the full-screen menu on mobile.
 - Mobile uses a two-line toggle and full-screen dialog, not a cramped drawer.
-- Menu is cream with 22px blur, numbered 01–07, Noto Serif links, contact and language switcher at the foot. Native `showModal()`, Escape, backdrop click and focus return.
+- Menu is cream with 22px blur, numbered 01–04, Noto Serif links, address and language switcher at the foot. Native `showModal()`, Escape, backdrop click and focus return.
 
 ### Page structure
 
 The page is ordered for a real-estate reader rather than an editorial one:
 
-**Header → Video → Gallery → Property identity → Characteristics → Craft → FAQs → Contact → Footer.**
+**Header → Video → Gallery → Overview → Contact → Footer.**
 
-- **Video** opens with a postcard cover panel: framed 1:1 entrance-hall film poster beside a cream text panel with the window mark, two-line wordmark, location, promise, sale line and an editorial play plaque.
+- **Video** opens with a postcard cover panel: framed 1:1 entrance-hall film poster beside a cream text panel with the supplied emblem, two-line wordmark, location, promise, sale line and an editorial play plaque. Contact and Gallery links sit below the panel.
 - **Gallery** follows immediately: 25 photographs, filters and lightbox.
-- **Property identity** gives the address, coordinates, property type and the static area map.
-- **Characteristics** is a ten-field grid: reported area, reported plot area, rooms, bedrooms, bathrooms, build year, construction materials, structural features, outdoor spaces and sustainability status. The reported figures are 1,036.68 m², 488.49 m², 25 rooms, 12 bedrooms and 1783, with a garden and two terraces. Bathroom schedule and floor count remain to be confirmed; the grid carries that caveat.
-- **Craft** keeps the architectural and craft detail, including stucco, azulejo, marble and the garden façade.
-- **FAQs** sits before the contact block.
-- **Contact** has no form: it opens with the italic **Discover the residence**, sets **Private film & viewing enquiries** beneath it, then gives the email address and an outlined **Request the full dossier** button whose `mailto:` subject and body are prefilled in the page language.
-- **Footer** carries the window mark, an uppercase two-line wordmark, navigation, contact details and the eleven-language selector.
+- **Contact** gives the address, appointment note and the static antique area map, with no pin, coordinates or price.
+- **Overview** replaces the old Property and Characteristics sections. It uses the old Property introduction and a twelve-field grid: property type, nearest metro, reported area, reported plot area, rooms, bedrooms, bathrooms, build year, construction materials, structural features, outdoor spaces and sustainability status. The reported figures are 1,036.68 m², 488.49 m², 25 rooms, 12 bedrooms and 1783, with a garden and two terraces. Bathroom schedule and floor count remain to be confirmed; the grid carries that caveat. Coordinates and asking price are no longer published.
+- The former Craft section is removed; its six photographs already live in the gallery, and the craft detail remains in the captions and Overview facts.
+- **Contact** has no form and no visible email address. It opens with the italic **Discover the Palacio**, sets **Private film & viewing enquiries** beneath it, then gives the address, appointment note, a small antique-style area map without a location pin, and an outlined **Request the full dossier** button whose `mailto:` goes to `palaciobelavista@gmail.com` with a prefilled localized subject and body.
+- **Footer** carries the supplied emblem, an uppercase two-line wordmark, a minimal copyright line, Back to Top and the eleven-language selector.
 
 ### Photography, gallery and lightbox
 
@@ -181,21 +184,21 @@ The page is ordered for a real-estate reader rather than an editorial one:
 - The gallery remains full-bleed on dark ink; craft images sit as framed plates on a cream mount; explicit dimensions and responsive AVIF/WebP/JPEG.
 - Video poster and below-fold images use native lazy loading; the map is eager-loaded, desaturated, and carries the brass pin and cream card.
 - Visible Engel & Völkers watermarks were removed by seam-cropping quiet areas and blending, not painting over architecture.
-- Gallery: 3-column masonry desktop, 2-column tablet, 84%-viewport snap carousel mobile. Filters: All, Architecture, Interiors, Craft, Garden, Lisbon.
+- Gallery: 3-column masonry desktop, 2-column tablet, 84%-viewport snap carousel mobile. One gallery, no filters and no photograph count; all 25 images remain.
 - Hover/focus: soft brass radial light + thin inset frame; captions over a bottom gradient.
 - Lightbox: near-black blurred backdrop, large image, title/category, count, arrows, keyboard/swipe, no thumbnail strip; selects a viewport-appropriate variant instead of upscaling.
 
-### Video, property identity and map
+### Video, Overview and map
 
 - Video is the first content section: a 1:1 entrance-hall poster with a cream-and-brass play plaque, never autoplaying; it opens a native-control dialog with captions. Runtime 42 seconds.
-- Property identity combines the address, coordinates, property type, asking price (upon request) and a **static OSM image**, not an iframe: no cookies, no third-party JS, desaturated basemap, brass HTML pin and visible OSM attribution. Google Maps removed.
-- The architecture plan drawing is no longer a separate section; the essential structural facts are carried in Characteristics and Craft.
+- Contact carries the address, property type and nearest metro in Overview, and a small **static OSM image** styled as an antique area map, with no location pin. The map is not an iframe: no cookies, no third-party JS, and visible OSM attribution. Coordinates, asking price and the separate Property section are removed.
+- The architecture plan drawing is no longer a separate section; the essential structural facts are carried in Overview and the gallery captions.
 
 ### Contact, footer and languages
 
 - **No contact form.** The contact section gives the email address and a single **Request the full dossier** button.
 - The button is a `mailto:` link with a prefilled, localized subject and body asking for more information about the property and the full dossier.
-- Footer: dark ink, window mark, uppercase two-line Noto Serif wordmark with brass “Bela Vista”; Visit/Discover/Contact columns.
+- Footer: dark ink, supplied emblem, uppercase two-line Noto Serif wordmark with brass “Bela Vista”, a minimal copyright line, Back to Top and the eleven-language selector. The old Visit/Discover/Contact columns and descriptive/contact texts are removed.
 - Language switcher in footer and menu, not header: visible two-letter codes, native-language accessible names, active brass rule. It lists eleven languages in speaker order.
 - Back-to-top is a plain text arrow link, not a floating button.
 
@@ -237,7 +240,7 @@ The page is ordered for a real-estate reader rather than an editorial one:
 
 The site targets **WCAG 2.2 AA** and was audited with Lighthouse plus manual checks; Lighthouse is a baseline, not a certification.
 
-- **No text below 1rem/16px.** FAQ questions are larger; answers are `1.0625rem`.
+- **No text below 1rem/16px.** Overview values and contact details are set in Noto Serif at readable sizes.
 - Body copy has generous line-height and readable measures.
 - German compounds use `hyphens: auto`; footer headings are non-breaking; overflow checked at all listed widths in the Latin locales.
 - Header: permanent cream, ink text and a hairline; 14px blur; fixed 4.5rem height.
@@ -269,13 +272,13 @@ The site targets **WCAG 2.2 AA** and was audited with Lighthouse plus manual che
 
 The language selector is sorted by **total number of speakers worldwide**, using the Ethnologue 2026 estimates summarised in [Wikipedia’s list of languages by total number of speakers](https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers). Arabic and French are effectively tied (335M vs 334M); the table follows the published order. Counts are estimates, not exact census figures. The selector codes are `EN · ZH · HI · ES · AR · FR · PT · RU · DE · JA · IT`.
 
-Every locale has localized copy, navigation, property identity, characteristics, contact copy, FAQ, footer, title/description, OG/Twitter metadata, JSON-LD (`inLanguage`, descriptions, FAQ, amenity names, image captions), gallery captions/categories and the prefilled dossier email, plus hreflang alternates including `x-default`.
+Every locale has localized copy, navigation, Overview, contact copy, footer, title/description, OG/Twitter metadata, JSON-LD (`inLanguage`, descriptions, amenity names, image captions), gallery captions and the prefilled dossier mailto, plus hreflang alternates including `x-default`.
 
 The gallery count and filter counts use locale-aware plural forms: Arabic (1 / 2 / 3–10 / 11+), Russian (1 / 2–4 / 5+), Hindi (1 / plural), and invariant forms for Chinese and Japanese.
 
 ## 6. SEO, canonical URLs and indexing
 
-Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSite`, `WebPage`, `Place`, `FAQPage`, `BreadcrumbList`), hreflang, descriptive metadata and image alt text.
+Pages include canonical URLs, OG/Twitter cards, JSON-LD (`Organization`, `WebSite`, `WebPage`, `Place`, `BreadcrumbList`), hreflang, descriptive metadata and image alt text.
 
 - **Current base URL:** `https://fernangz.github.io/palaciobelavista.com`
 - **Current canonical URLs:** root `/`, locale `/{code}/`.
@@ -335,11 +338,11 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 
 ## 9. Assets
 
-- 25 gallery photographs in AVIF/WebP/JPEG at multiple widths; responsive gallery and property sets.
+- 25 gallery photographs in AVIF/WebP/JPEG at multiple widths; responsive gallery sets.
 - Watermarked sources cleaned by quiet-area seam-crop/blend; originals left outside this repo.
 - Film `assets/video/palacio-belavista.mp4`, 42 s H.264 fast-start; 1:1 entrance-hall poster in AVIF/WebP/JPEG; `palacio-belavista-en.vtt`.
-- Static OSM map; brass HTML pin; OSM attribution.
-- OG card `assets/img/og-image.jpg` (1200×630) in the postcard system; window-mark favicons and PWA icons.
+- Static OSM-derived antique area map in JPEG at three widths; no pin; OSM attribution.
+- OG card `assets/img/og-image.jpg` (1200×630) in the postcard system with the supplied emblem; simplified favicons and PWA icons.
 - Postcard QR `qr/palacio-belavista-play-qr.svg` (1200×1200 SVG, cream/ink/brass) pointing to `https://palaciobelavista.com/?play`.
 - Fonts are embedded as subsets; `FONT-LICENSES.md` records the Noto licences.
 - Unused wide hero image variants and the duplicate `favicon-48.png` were removed after the page restructure; the remaining asset set is fully referenced. The supplied postcard artwork stays outside the published assets.
@@ -347,7 +350,7 @@ npx lighthouse https://fernangz.github.io/palaciobelavista.com/ \
 
 ## 10. Contact and dossier
 
-There is no contact form. The contact section gives `enquiries@palaciobelavista.com` and a **Request the full dossier** button. The button is a `mailto:` link with a prefilled subject and body, localized per page, that asks for more information about the property and the full dossier. No analytics or tracking.
+There is no contact form and no visible email address. The contact section gives the address, appointment note, small area map and a **Request the full dossier** button. The button is a `mailto:palaciobelavista@gmail.com` link with a prefilled subject and body, localized per page, that asks for more information about the property and the full dossier. No analytics or tracking.
 
 > The email domain depends on `palaciobelavista.com`, which is not yet registered or delegated. Until it is, the mailto link cannot deliver mail even though it opens correctly.
 
@@ -369,7 +372,7 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 2. Add a `CNAME` file containing `palaciobelavista.com`.
 3. Enable the custom domain in the repository’s Pages settings and wait for the TLS certificate.
 4. Replace `https://fernangz.github.io/palaciobelavista.com` with `https://palaciobelavista.com` in all eleven pages: canonical, hreflang, `og:url`, `og:image`, Twitter image, JSON-LD URLs and `@id` values.
-5. Set up MX/mail for `enquiries@palaciobelavista.com` (or change the published address), then test the dossier mailto link end-to-end.
+5. Confirm the Gmail mailbox is monitored, then test the dossier mailto link end-to-end.
 6. Re-test old links, the language switcher and the canonical/hreflang set after the domain switch.
 
 ## 12. Task recap
@@ -402,12 +405,13 @@ There is no contact form. The contact section gives `enquiries@palaciobelavista.
 26. Switched the whole site to Noto Serif + Noto Sans, with script-specific Noto faces and regenerated subsets for all eleven locales and the OG card.
 27. Restructured every locale into Header → Video → Gallery → Property identity → Characteristics → Craft → FAQs → Contact → Footer; removed the form and added the localized full-dossier mailto.
 28. Removed unused wide hero image variants and `favicon-48.png`, and rechecked every remaining asset against the published references.
-29. Implemented the postcard design system: window mark, cream split panels, serif body copy, brass rules, two-line wordmark, “Private residence available to purchase”, and a dark gallery/footer contrast.
+29. Implemented the postcard design system: engraved emblem, cream split panels, serif body copy, brass rules, two-line wordmark, “Private residence available to purchase”, and a dark gallery/footer contrast.
 30. Added the `/?play` postcard QR deep link and regenerated the OG card and favicons in the postcard system.
 31. Updated the property facts from dossier v04: 1,036.68 m² reported area, 488.49 m² plot, 25 rooms, 12 bedrooms, 1783, garden and two terraces, price upon request; documented the unconfirmed bathroom schedule and floor count.
 32. Replaced the portrait video poster with a 1:1 entrance-hall crop and redesigned the play control as a cream-and-brass editorial plaque; on mobile the poster now leads the cover.
 33. Removed the scroll-driven header state so the navigation and menu control keep the same height and treatment from first paint.
 34. Added a selection and cursor policy: UI chrome/media are non-selectable, body copy stays selectable, and interactive elements carry pointer, zoom-in or disabled cursors.
+35. Applied the confirmed review: Video → Gallery → Overview → Contact; removed Property, Craft and FAQ; removed gallery filters/count; replaced the mark with the supplied SVG emblem; moved the map to Contact as an antique area view without a pin; removed visible email, coordinates and price; switched mailto to `palaciobelavista@gmail.com`; simplified the footer and kept all eleven languages.
 
 ## 13. Credits
 
