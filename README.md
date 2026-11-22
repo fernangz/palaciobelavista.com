@@ -182,8 +182,8 @@ The page is ordered for a real-estate reader rather than an editorial one:
 
 - Only palace photography; no stock. Crops favour symmetry, doorways, ceiling roundels and garden depth; natural colour, no heavy filters.
 - The gallery remains full-bleed on dark ink; craft images sit as framed plates on a cream mount; explicit dimensions and responsive AVIF/WebP/JPEG.
-- Video poster and below-fold images use native lazy loading; the map is eager-loaded, desaturated, and carries the brass pin and cream card.
-- Visible Engel & Völkers watermarks were removed by seam-cropping quiet areas and blending, not painting over architecture.
+- Video poster and below-fold images use native lazy loading; the contact map is eager-loaded and uses the pre-styled antique area artwork.
+- Visible third-party watermarks were removed by seam-cropping quiet areas and blending, not painting over architecture.
 - Gallery: 3-column masonry desktop, 2-column tablet, 84%-viewport snap carousel mobile. One gallery, no filters and no photograph count; all 25 images remain.
 - Hover/focus: soft brass radial light + thin inset frame; captions over a bottom gradient.
 - Lightbox: near-black blurred backdrop, large image, title/category, count, arrows, keyboard/swipe, no thumbnail strip; selects a viewport-appropriate variant instead of upscaling.
@@ -378,7 +378,7 @@ There is no contact form and no visible email address. The contact section gives
 ## 12. Task recap
 
 1. Audited supplied palace photography/film; selected the gallery set.
-2. Removed visible Engel & Völkers watermarks via seam-crop/blend; produced AVIF/WebP/JPEG derivatives.
+2. Removed visible third-party watermarks via seam-crop/blend; produced AVIF/WebP/JPEG derivatives.
 3. Compressed film to H.264, generated poster and VTT.
 4. Art direction: Noto Serif + Noto Sans, cream/ink/brass, mobile-first editorial layout.
 5. Built the original editorial sections: hero, palace, architecture, interiors, craft, garden, film, gallery, private viewings, map, FAQ and form.
